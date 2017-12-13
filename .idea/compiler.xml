@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="springmvc_spring_mybatis-2017-12-11" target="1.5" />
+      <module name="springmvc_spring_mybatis-2017-12-11" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -8,7 +8,7 @@ import java.util.Date;
  * @outhor hokitlee
  * @create 2017-12-12 14:01
  */
-public class Section {
+public class SectionPojo {
     private int sno;
     private String sname;
     private String stype;
