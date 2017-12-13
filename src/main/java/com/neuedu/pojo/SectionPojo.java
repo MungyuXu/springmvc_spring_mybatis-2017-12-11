@@ -1,7 +1,5 @@
 package com.neuedu.pojo;
 
-import java.util.Date;
-
 /**
  * 描述:
  *
@@ -9,20 +7,20 @@ import java.util.Date;
  * @create 2017-12-12 14:01
  */
 public class SectionPojo {
-    private int sno;
+    private String sno;
     private String sname;
     private String stype;
     private String sphone;
     private String sfax;
     private String supper;
-    private Date s_setdate;
-    private String sdes;
+    private String s_setdate;
+    private String submit;
 
-    public int getSno() {
+    public String getSno() {
         return sno;
     }
 
-    public void setSno(int sno) {
+    public void setSno(String sno) {
         this.sno = sno;
     }
 
@@ -66,19 +64,19 @@ public class SectionPojo {
         this.supper = supper;
     }
 
-    public Date getS_setdate() {
+    public String getS_setdate() {
         return s_setdate;
     }
 
-    public void setS_setdate(Date s_setdate) {
+    public void setS_setdate(String s_setdate) {
         this.s_setdate = s_setdate;
     }
 
-    public String getSdes() {
-        return sdes;
+    public String getSubmit() {
+        return submit;
     }
 
-    public void setSdes(String sdes) {
-        this.sdes = sdes;
+    public void setSubmit(String submit) {
+        this.submit = submit;
     }
 }

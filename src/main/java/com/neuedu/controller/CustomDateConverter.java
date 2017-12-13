@@ -1,7 +1,4 @@
 package com.neuedu.controller;
-
-
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,6 +18,9 @@ public class CustomDateConverter implements Converter<String,Date>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return null;
+		
 	}
+
 }
