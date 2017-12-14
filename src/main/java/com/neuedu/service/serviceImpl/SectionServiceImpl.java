@@ -6,12 +6,6 @@ import com.neuedu.service.SectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * 描述:
- *
- * @outhor hokitlee
- * @create 2017-12-13 9:48
- */
 @Service
 public class SectionServiceImpl implements SectionService {
 
