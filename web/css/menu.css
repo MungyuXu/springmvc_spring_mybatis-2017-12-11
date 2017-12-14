@@ -1,5 +1,5 @@
 div.sdmenu {
-	width: 170px; font-size:13px; font-weight:bold; color: #14ad2a; font-family:"Î¢ÈíÑÅºÚ"; height:550px;
+	width: 170px; font-size:13px; font-weight:bold; color:#ad8634; font-family:"Î¢ÈíÑÅºÚ"; height:550px;
 }
 div.sdmenu div {
 	background:url(../images/menu_bg_hover.gif) repeat-x;overflow: hidden;
@@ -11,31 +11,31 @@ div.sdmenu div.collapsed {
 	height: 32px;
 }
 div.sdmenu div span {
-	display: block;line-height:32px;width:170px;font-weight: bold;color: #c3ffb3;cursor: pointer; margin-left:0px;
+	display: block;line-height:32px;width:170px;font-weight: bold;color: white;cursor: pointer; margin-left:0px;
 }
 div.sdmenu div span a{
     padding:0; background:none; border:0; font-size:13px;line-height:32px;display:block
 }
 div.sdmenu div.collapsed {
-	background: url(../images/menu_bg.gif) repeat-x; width:170px; color: #59ad5d
+	background: url(../images/menu_bg.gif) repeat-x; width:170px; color:#ad8634
 }
 div.sdmenu div.collapsed span{
-    color: #0bad6e; line-height:32px
+    color:#ad8634; line-height:32px
 }
 div.sdmenu div.collapsed span a.current{
-    color: #17ad27;
+    color:#ad8634;
 }
 div.sdmenu div a {
-	padding-left:25px;display: block;border-bottom: 1px solid #fff;color: #00cc00;font-size:12px; background:url(../menu_sub_icon.gif) no-repeat 27px 7px #f7f2d4; line-height:28px
+	padding-left:25px;display: block;border-bottom: 1px solid #fff;color:#CC9966;font-size:12px; background:url(../menu_sub_icon.gif) no-repeat 27px 7px #f7f2d4; line-height:28px
 }
 div.sdmenu div a.current {
-	background : url(../images/linkarrow.gif) no-repeat  27px 7px #00f82f;  color: #0aad32
+	background : url(../images/linkarrow.gif) no-repeat  27px 7px #f8ec94;  color:#ad8634
 }
 div.sdmenu div span a.current {
 	background :none; color:#fff
 }
 div.sdmenu div a:hover {
-	background : url(../images/menu_sub_icon.gif) no-repeat  27px 7px #a1f89c;text-decoration: none;
+	background : url(../images/menu_sub_icon.gif) no-repeat  27px 7px #f8ec94;text-decoration: none;
 }
 div.sdmenu div span a:hover {
 	background:none;
