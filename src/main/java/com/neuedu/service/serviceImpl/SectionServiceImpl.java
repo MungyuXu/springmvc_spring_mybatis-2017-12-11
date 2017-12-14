@@ -6,6 +6,8 @@ import com.neuedu.service.SectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SectionServiceImpl implements SectionService {
 
@@ -17,4 +19,15 @@ public class SectionServiceImpl implements SectionService {
         sectionMapper.add(section);
         return 0;
     }
+
+    @Override
+    public List<SectionPojo> queryAll() {
+        return sectionMapper.queryAll();
+    }
+
+    @Override
+    public void dele(String[] sections) {
+        sectionMapper.dele(sections);
+    }
+
 }

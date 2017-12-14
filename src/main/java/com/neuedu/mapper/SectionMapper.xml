@@ -5,4 +5,15 @@
         insert into section(sno, sname, stype, sphone, sfax, supper, s_setdate, sdes)
          values(#{sno},#{sname},#{stype},#{sphone}, #{sfax}, #{supper},#{s_setdate},#{sdes})
     </insert>
+    <select id="queryAll" resultType="com.neuedu.pojo.SectionPojo">
+        SELECT *  FROM section
+    </select>
+    <delete id="dele">
+        <if test="array != null and array.length > 0">
+        DELETE FROM section WHERE sno IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        </if>
+    </delete>
 </mapper>
