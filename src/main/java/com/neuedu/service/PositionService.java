@@ -4,5 +4,5 @@ import com.neuedu.pojo.PositionPojo;
 
 
 public interface PositionService {
-public  int add(PositionPojo position);
+    public int add(PositionPojo position);
 }

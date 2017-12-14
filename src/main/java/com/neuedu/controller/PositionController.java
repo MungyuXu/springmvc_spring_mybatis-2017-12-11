@@ -16,7 +16,6 @@ public class PositionController {
 
     @RequestMapping(value = "positionAdd")
     public  String add(PositionPojo position){
-        System.out.print("positioncondfd");
         positionService.add(position);
         return "ok";
     }

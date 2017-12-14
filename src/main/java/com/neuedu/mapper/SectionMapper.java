@@ -1,5 +1,7 @@
 package com.neuedu.mapper;
 
-public interface SectionMapper {
-    public void add();
+import com.neuedu.pojo.SectionPojo;
+
+public interface  SectionMapper {
+    public void add(SectionPojo section);
 }
