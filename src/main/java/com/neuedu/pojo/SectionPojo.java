@@ -15,13 +15,21 @@ public class SectionPojo {
     private String supper;
     private String s_setdate;
     private String submit;
-
+    private  String sdes;
     public String getSno() {
         return sno;
     }
 
     public void setSno(String sno) {
         this.sno = sno;
+    }
+
+    public String getSdes() {
+        return sdes;
+    }
+
+    public void setSdes(String sdes) {
+        this.sdes = sdes;
     }
 
     public String getSname() {
