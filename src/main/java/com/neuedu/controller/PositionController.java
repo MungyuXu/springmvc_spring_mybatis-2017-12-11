@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "html")
 public class PositionController {
+
     @Autowired
     PositionService positionService;
-
-
 
     @RequestMapping(value = "positionAdd")
     public  String add(PositionPojo position){
