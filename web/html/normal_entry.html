@@ -1,116 +1,116 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="../js/Calendar.js" type="text/javascript"></script>
 <script src="../js/valid.js" type="text/javascript"></script>
 <link href="../css/css.css" rel="stylesheet" type="text/css" />
 <script src="../js/iframe.js" type="text/javascript"></script>
-<title>��ͨ��Ա¼��</title>
+<title>普通人员录入</title>
 </head>
 
 <body>
-<span class="span_title">��ͨ��ְ��</span>
+<span class="span_title">普通入职：</span>
 <hr />
-<span class="span_text">¼����Ϣ��</span>
+<span class="span_text">录入信息：</span>
 <form id="information" method="post" action="employAdd.do">
 <table  width="420" border="0" align="center"><br />
 <tr>
-    <td width="150"><span class="span_content">Ա���ţ�</span><font class="mark">*</font></td>
+    <td width="150"><span class="span_content">员工号：</span><font class="mark">*</font></td>
     <td width="200"><input class="input_text" name="eno" type="text"/></td>
     <td width="70">&nbsp;</td>
   </tr>
   <tr>
-    <td width="150"><span class="span_content">������</span><font class="mark">*</font></td>
+    <td width="150"><span class="span_content">姓名：</span><font class="mark">*</font></td>
     <td width="200"><input class="input_text" name="ename" type="text"/></td>
     <td width="70">&nbsp;</td>
   </tr>
   <tr>
-    <td><span class="span_content">�Ա�</span><font class="mark">*</font></td>
+    <td><span class="span_content">性别：</span><font class="mark">*</font></td>
     <td><span class="span_content">
 	<select name="egender" id="egender">
-		<option value="��" > ��</option>
-		<option value="Ů" >Ů</option>
+		<option value="男" > 男</option>
+		<option value="女" >女</option>
 	</select>
 	</span></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td ><span class="span_content">�������ڣ�</span><font class="mark">*</font></td>
+    <td ><span class="span_content">出生日期：</span><font class="mark">*</font></td>
     <td ><input class="input_text" name="ebdate" type="text"onClick="javascript:ShowCalendar(this)" ></td>
     <td>&nbsp;</td>
   </tr>
     <tr>
-    <td><span class="span_content">����֤��</span><font class="mark">*</font></td>
+    <td><span class="span_content">身份证：</span><font class="mark">*</font></td>
     <td><input class="input_text" name="eid" type="text" /></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><span class="span_content">���ţ�</span><font class="mark">*</font></td>
+    <td><span class="span_content">部门：</span><font class="mark">*</font></td>
     <td><select name="esection" id="section">
-      <option value="1" >����1 </option>
-      <option value="2" >����2</option>
-	  <option value="3" >����3</option>
+      <option value="1" >部门1 </option>
+      <option value="2" >部门2</option>
+	  <option value="3" >部门3</option>
     </select></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><span class="span_content">��λ��</span><font class="mark">*</font></td>
+    <td><span class="span_content">岗位：</span><font class="mark">*</font></td>
     <td><select name="eposition" id="position">
-      <option value="1" >��λ1 </option>
-      <option value="2" >��λ2</option>
-	  <option value="3" >��λ3</option>
+      <option value="1" >岗位1 </option>
+      <option value="2" >岗位2</option>
+	  <option value="3" >岗位3</option>
     </select></td>
     <td>&nbsp;</td>
   </tr>
     <tr>
-    <td><span class="span_content">�ù���ʽ��</span><font class="mark">*</font></td>
+    <td><span class="span_content">用工形式：</span><font class="mark">*</font></td>
     <td>
 	<select id="choose_type" name="etype">
-	<option value="A" selected="selected"><span class="span_content">��ʽԱ��</span></option>
-	<option value="B"><span class="span_content">��ʱԱ��</span></option>
+	<option value="A" selected="selected"><span class="span_content">正式员工</span></option>
+	<option value="B"><span class="span_content">临时员工</span></option>
 	</select>
 	</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><span class="span_content">��Ա��Դ��</span><font class="mark">*</font></td>
+    <td><span class="span_content">人员来源：</span><font class="mark">*</font></td>
     <td>
 	<select id="choose_type" name="efrom">
-	<option value="A" selected="selected"><span class="span_content">У԰��Ƹ</span></option>
-	<option value="B"><span class="span_content">�����Ƹ</span></option>
-	<option value="C"><span class="span_content">����</span></option>
+	<option value="A" selected="selected"><span class="span_content">校园招聘</span></option>
+	<option value="B"><span class="span_content">社会招聘</span></option>
+	<option value="C"><span class="span_content">其它</span></option>
 	</select>
 	</td>
     <td>&nbsp;</td>
   </tr>
    <tr>
-    <td><span class="span_content">��ְ���ڣ�</span><font class="mark">*</font></td>
+    <td><span class="span_content">入职日期：</span><font class="mark">*</font></td>
     <td ><input class="input_text" name="e_entrydate" type="text" id="r_date"  onClick="javascript:ShowCalendar(this)" ></td>
     <td>&nbsp;</td>
   </tr>
    <tr>
-    <td><span class="span_content">�μӹ������ڣ�</span><font class="mark">*</font></td>
+    <td><span class="span_content">参加工作日期：</span><font class="mark">*</font></td>
     <td width="135"><input class="input_text" name="eattenddate" type="text" id="j_date"  onClick="javascript:ShowCalendar(this)" ></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><span class="span_content">�Ƿ���Ҫ�����ڣ�</span></td>
+    <td><span class="span_content">是否需要试用期：</span></td>
     <td><span class="span_content"><input type="radio" id="r1" name=""  value="1" onClick="show('div_date')">
-    ��<input  type="radio" id="r2" name=""  value="0" onClick="hidden('div_date')" checked="checked" >
-    �� 
+    是<input  type="radio" id="r2" name=""  value="0" onClick="hidden('div_date')" checked="checked" >
+    否 
     </span></td>
 	<tr id="tab">
 			<td colspan="2">
 <div id="div_date" style="display:none">
 				<table >
 					<tr>
-						<td><span class="span_content">�����ڿ�ʼʱ�䣺</span></td>
+						<td><span class="span_content">试用期开始时间：</span></td>
 						<td width="57">&nbsp;</td>
 						<td><input class="input_text" name="try_start" type="text" id="start_date"  onClick="javascript:ShowCalendar(this)"></td>
 					</tr>
 					<tr>	
-						<td><span class="span_content">�����ڽ���ʱ�䣺</span></td>
+						<td><span class="span_content">试用期结束时间：</span></td>
 						<td width="57">&nbsp;</td>
 						<td><input class="input_text" name="end_date" type="text" id="end_date"  onClick="javascript:ShowCalendar(this)" ></td>
 					</tr>
@@ -121,129 +121,129 @@
     <td>&nbsp;</td>
 	</tr>
   <tr>
-  <td><span class="span_content">�Ƿ���Ҫ��д��ϸ��Ϣ��</span></td>
-<td><span class="span_content"><input type="radio" id="a1" name="information"  value="1"  onClick="show('table_detail')">��<input type="radio" id="a2" name="information"  value="0" onClick="hidden('table_detail')" checked="checked" >�� 
+  <td><span class="span_content">是否需要填写详细信息：</span></td>
+<td><span class="span_content"><input type="radio" id="a1" name="information"  value="1"  onClick="show('table_detail')">是<input type="radio" id="a2" name="information"  value="0" onClick="hidden('table_detail')" checked="checked" >否 
     </span></td>
 	 <td>&nbsp;</td>
 	<tr id="infor">
 	<td colspan="2">
 				<table id="table_detail" align="center" style="display:none">
 			<tr>
-				<td><span class="span_content">������ò��</span></td>
+				<td><span class="span_content">政治面貌：</span></td>
 				<td>
 				<select id="choose_type">
-				<option value="A" selected="selected"><span class="span_content">��Ա</span></option>
-				<option value="B"><span class="span_content">Ԥ����Ա</span></option>
-				<option value="C"><span class="span_content">������Ա</span></option>
-				<option value="D"><span class="span_content">����</span></option>
+				<option value="A" selected="selected"><span class="span_content">党员</span></option>
+				<option value="B"><span class="span_content">预备党员</span></option>
+				<option value="C"><span class="span_content">共青团员</span></option>
+				<option value="D"><span class="span_content">其它</span></option>
 				</select>
 				</td>
 				<td>&nbsp;</td>
          	</tr>
 	    <tr>
-		<td ><span class="span_content">���壺</span></td>
+		<td ><span class="span_content">民族：</span></td>
 		<td >		<select id="choose_type" name="enation">
-			<option value="A" selected="selected">��</option>
-			<option value="B">��</option>
-			<option value="C">׳</option>
-			<option value="D">����</option>
+			<option value="A" selected="selected">汉</option>
+			<option value="B">满</option>
+			<option value="C">壮</option>
+			<option value="D">其他</option>
 		</select></td>
 		<td>&nbsp;</td>
 	   </tr>
 	  <tr>
-		<td ><span class="span_content">���᣺</span></td>
+		<td ><span class="span_content">籍贯：</span></td>
 		<td ><input class="input_text" name="eplace" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-		<td ><span class="span_content">��ϵ�绰��</span></td>
+		<td ><span class="span_content">联系电话：</span></td>
 		<td ><input class="input_text" name="ephone" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-		<td ><span class="span_content">�����ʼ���</span></td>
+		<td ><span class="span_content">电子邮件：</span></td>
 		<td ><input class="input_text" name="e_email" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-		<td ><span class="span_content">���ߣ�</span></td>
+		<td ><span class="span_content">身高：</span></td>
 		<td ><input class="input_text" name="eheight" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-	  		<td><span class="span_content">Ѫ�ͣ�</span></td>
+	  		<td><span class="span_content">血型：</span></td>
 			<td>
 				<select id="choose_type" name="eblood">
-				<option value="A" selected="selected"><span class="span_content">A��</span></option>
-				<option value="B"><span class="span_content">B��</span></option>
-				<option value="C"><span class="span_content">AB��</span></option>
-				<option value="D"><span class="span_content">O��</span></option>
-				<option value="D"><span class="span_content">����</span></option>
+				<option value="A" selected="selected"><span class="span_content">A型</span></option>
+				<option value="B"><span class="span_content">B型</span></option>
+				<option value="C"><span class="span_content">AB型</span></option>
+				<option value="D"><span class="span_content">O型</span></option>
+				<option value="D"><span class="span_content">其它</span></option>
 				</select>
 			</td>
 			<td>&nbsp;</td>
 	   </tr>
 	   <tr>
-	  		<td><span class="span_content">����״����</span></td>
+	  		<td><span class="span_content">婚姻状况：</span></td>
 			<td>
 				<select id="choose_type" name="emarry">
-				<option value="A" selected="selected"><span class="span_content">δ��</span></option>
-				<option value="B"><span class="span_content">�ѻ�</span></option>
-				<option value="C"><span class="span_content">ɥż</span></option>
-				<option value="D"><span class="span_content">���</span></option>
-				<option value="D"><span class="span_content">����</span></option>
+				<option value="A" selected="selected"><span class="span_content">未婚</span></option>
+				<option value="B"><span class="span_content">已婚</span></option>
+				<option value="C"><span class="span_content">丧偶</span></option>
+				<option value="D"><span class="span_content">离婚</span></option>
+				<option value="D"><span class="span_content">其它</span></option>
 				</select>
 			</td>
 			<td>&nbsp;</td>
 	   </tr>
 	   <tr>
-		<td ><span class="span_content">�����أ�</span></td>
+		<td ><span class="span_content">出生地：</span></td>
 		<td ><input class="input_text" name="ebplace" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	   <tr>
-		<td ><span class="span_content">�������ڵأ�</span></td>
+		<td ><span class="span_content">户口所在地：</span></td>
 		<td ><input class="input_text" name="esplace" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	    <tr>
-	  		<td><span class="span_content">���ѧ����</span></td>
+	  		<td><span class="span_content">最高学历：</span></td>
 			<td>
 				<select id="choose_type" name="erecord">
-				<option value="A" selected="selected"><span class="span_content">���м�����</span></option>
-				<option value="B"><span class="span_content">��ר</span></option>
-				<option value="C"><span class="span_content">����</span></option>
-				<option value="D"><span class="span_content">�о���</span></option>
+				<option value="A" selected="selected"><span class="span_content">高中及以下</span></option>
+				<option value="B"><span class="span_content">大专</span></option>
+				<option value="C"><span class="span_content">本科</span></option>
+				<option value="D"><span class="span_content">研究生</span></option>
 				</select>
 			</td>
 			<td>&nbsp;</td>
 	   </tr>
 	   <tr>
-	  		<td><span class="span_content">���ѧλ��</span></td>
+	  		<td><span class="span_content">最高学位：</span></td>
 			<td>
 				<select id="choose_type" name="edegree">
-				<option value="A" selected="selected"><span class="span_content">��ѧλ</span></option>
-				<option value="B"><span class="span_content">ѧʿ</span></option>
-				<option value="C"><span class="span_content">˫ѧʿ</span></option>
-				<option value="D"><span class="span_content">˶ʿ</span></option>
-				<option value="D"><span class="span_content">��ʿ</span></option>
-				<option value="D"><span class="span_content">��ʿ��</span></option>
+				<option value="A" selected="selected"><span class="span_content">无学位</span></option>
+				<option value="B"><span class="span_content">学士</span></option>
+				<option value="C"><span class="span_content">双学士</span></option>
+				<option value="D"><span class="span_content">硕士</span></option>
+				<option value="D"><span class="span_content">博士</span></option>
+				<option value="D"><span class="span_content">博士后</span></option>
 				</select>
 			</td>
 			<td>&nbsp;</td>
 	   </tr>
 	   <tr>
-		<td ><span class="span_content">��ҵԺУ��</span></td>
+		<td ><span class="span_content">毕业院校：</span></td>
 		<td ><input class="input_text" name="eschool" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-		<td ><span class="span_content">��ѧרҵ��</span></td>
+		<td ><span class="span_content">所学专业：</span></td>
 		<td ><input class="input_text" name="emajor" type="text" /></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
-		<td><span class="span_content">��ҵ���ڣ�</span></td>
+		<td><span class="span_content">毕业日期：</span></td>
 		<td width="135"><input class="input_text" name="egraduate" type="text" id="egraduate" onClick="javascript:ShowCalendar(this)" ></td>
 		<td>&nbsp;</td>
   	</tr>
@@ -256,7 +256,7 @@
 <td>&nbsp;</td>
     <td >
 	
-<input class="lbutton" type="submit" value="¼��" onclick="valid_ne()"/></td>
+<input class="lbutton" type="submit" value="录入" onclick="valid_ne()"/></td>
     <td></td>
   </tr>
 </table>

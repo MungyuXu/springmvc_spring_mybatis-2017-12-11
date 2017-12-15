@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.mapper.EmployMapper">
     <insert id="add" parameterType="com.neuedu.pojo.EmployPojo">
-        insert into position1(eno, ename, egender, ebdate,eid,esection,eposition,etype,efrom,e_entrydate,eattenddate)
+        insert into employ(eno, ename, egender, ebdate,eid,esection,eposition,etype,efrom,e_entrydate,eattenddate)
          values(#{eno},#{ename},#{egender},#{ebdate},#{eid},#{esection},#{eposition},#{etype},#{efrom},#{e_entrydate},#{eattenddate})
     </insert>
 </mapper>

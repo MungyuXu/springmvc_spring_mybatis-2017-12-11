@@ -1,97 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<link href="../css/css.css" rel="stylesheet" type="text/css" />
-<script src="../js/Calendar.js" type="text/javascript"></script>
-<script src="../js/iframe.js" type="text/javascript"></script>
-<title>查询岗位下员工</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <link href="../css/css.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/Calendar.js" type="text/javascript"></script>
+    <script src="../js/iframe.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.4.4.min.js"></script>
+    <script>function toQuery() {
+//js函数
+        $.ajax({
+            //局部刷新
+            type: 'post',
+            url: 'positionQuery.do',//等价于form的action="里面的东西
+            contentType: 'application/json;charset=utf-8',//从前台向后台传的值；
+            data: '{"pno":"1321","pname":888}',//向后台发送的数据
+            success: function (data) {
+                var trc = $("#tab1");
+                var meg = "";
+//                 后台如果成功操作，返回的信息date
+// $,each循环date 要被循环的数据集合index：从0开始，取一个数据一条记录+1，取出数据库的一条记录放在position中
+                $.each(data, function (index, position) {
+                    // language=HTML
+                    meg += "<tr id='tr_color'> <td width='10%'></td> <td width='20%'>" + position.pno + "</td><td width='20%'>" + position.pname + "</td><td width='20%'>" + position.ptype + "</td><td width='20%'>" + position.pnum + "</td></tr>";
+                    //跳出的提示框
+                    // alert(position.pno);
+                })
+                trc.html(meg);
+            }
+        });
+    }
+    </script>
+    <title>查询岗位下员工</title>
 </head>
 
 <body>
 <span class="span_title">查询岗位下员工：</span>
-<hr />
+<hr/>
 <span class="span_text">岗位查询：</span>
-<form name="form_search" method="get" >
-<span class="span_content">编号：</span>
-    <input class="input_text_s"name="" type="text"/>
+<form name="form_search" method="get">
+    <span class="span_content">编号：</span>
+    <input class="input_text_s" name="" type="text"/>
     <span class="span_content">名称：</span>
-	<input class="input_text_s" name="" type="text" />
+    <input class="input_text_s" name="" type="text"/>
     <span class="span_content">岗位类型：</span>
     <select id="choose_type">
-	<option value="1" selected="selected">管理</option>
-	<option value="2">技术</option>
-	<option value="3" >销售</option>
-	<option value="4">市场</option>
-	<option value="5">其他</option>
-	</select>
-  <input class="button" type="submit" value="查询"/>
+        <option value="1" selected="selected">管理</option>
+        <option value="2">技术</option>
+        <option value="3">销售</option>
+        <option value="4">市场</option>
+        <option value="5">其他</option>
+    </select>
+    <input class="button" type="button" value="查询" onclick="toQuery()"/>
 
 </form>
 
-<hr />
+<hr/>
 
-<div id="div_center" >
-<span class="span_text">查询结果：</span>
-<br />
-<table class="table_list" width="450px" height="100px" border="0" align="center">
+<div id="div_center">
+    <span class="span_text">查询结果：</span>
+    <br/>
+    <table class="table_list" width="450px" height="100px" border="0" align="center">
 
-  <tr id="tr_title">
-     <td width="25">&nbsp;</td>
-    <td width="86">编号</td>
-    <td width="95">名称</td>
-    <td width="146">岗位类型</td>
-    <td width="76">岗位编制</td>  
-  </tr>
+        <tr id="tr_title">
+            <td width="25">&nbsp;</td>
+            <td width="86">编号</td>
+            <td width="95">名称</td>
+            <td width="146">岗位类型</td>
+            <td width="76">岗位编制</td>
+        </tr>
 
-  <tr id="tr_color">
-   <td><input name="" type="checkbox" value="" disabled="disabled"/></td>
-    <td>1</td>
-    <td><a href="#" onclick="showBottom()">1</a></td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-  	<td><input name="" type="checkbox" value="" disabled="disabled"/></td>
-    <td>2</td>
-    <td><a href="#" onclick="showBottom()">1</a></td>
-    <td>2</td>
-    <td>2</td>
-  </tr>
-  <tr id="tr_color">
-  <td><input name="" type="checkbox" value="" disabled="disabled"/></td>
-    <td>3</td>
-    <td><a href="#" onclick="showBottom()">1</a></td>
-    <td>3</td>
-    <td>3</td>
-  </tr>
-</table>
+<table id="tab1"></table>
+        <!--<tr id="tr_color">-->
+
+        <!--</tr>-->
+
+
+    </table>
 </div><!--div for div_center-->
 <div id="div_bottom" style="display:none">
-<br />
-<hr />
-<span class="span_text">岗位信息：</span>
-<br />
-<table  class="table_list"align="center" width="430px" border="0px">
-  <tr>
-    <td><span class="span_table">编号：</span></td>
-    <td>001</td>
-    <td><span class="span_table">名称：</span></td>
-    <td>主任</td>
-  </tr>
-  <tr>
-    <td><span class="span_table">岗位类型：</span></td>
-    <td>管理</td>
-    <td><span class="span_table">岗位编制：</span></td>
-    <td>120</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><input type="button" class="lbutton" value="查询岗位下员工" onclick="document.location.replace('position_search1.html')"/></td>
-  </tr>
-</table>
+    <br/>
+    <hr/>
+    <span class="span_text">岗位信息：</span>
+    <br/>
+    <table class="table_list" align="center" width="430px" border="0px">
+        <tr>
+            <td><span class="span_table">编号：</span></td>
+            <td>001</td>
+            <td><span class="span_table">名称：</span></td>
+            <td>主任</td>
+        </tr>
+        <tr>
+            <td><span class="span_table">岗位类型：</span></td>
+            <td>管理</td>
+            <td><span class="span_table">岗位编制：</span></td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><input type="button" class="lbutton" value="查询岗位下员工"
+                       onclick="document.location.replace('position_search1.html')"/></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
