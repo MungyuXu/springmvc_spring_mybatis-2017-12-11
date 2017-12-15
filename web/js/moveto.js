@@ -1,4 +1,4 @@
-	//²¿ÃÅ¹ÜÀí£º
+	//ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½
 	
 	function moveto_sa()
 {
@@ -6,11 +6,11 @@
 	}
 	function moveto_sm()
 {
-	document.getElementById("iframe_main").setAttribute("src","html/section_modify.html");
+	document.getElementById("iframe_main").setAttribute("src","html/section_queryAll.do");
 	}
 	function moveto_sd()
 {
-	document.getElementById("iframe_main").setAttribute("src","html/section_delete.html");
+	document.getElementById("iframe_main").setAttribute("src","html/section_delete.do");
 	}
 	function moveto_ss()
 {
@@ -21,7 +21,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/section_search1.html");
 	}
 	
-	//2¸ÚÎ»¹ÜÀí£º
+	//2ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 	function moveto_pa()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/position_add.html");
@@ -43,7 +43,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/positon_search1.html");
 	}
 
-//3ÈËÔ±ÈëÖ°¹ÜÀí£º
+//3ï¿½ï¿½Ô±ï¿½ï¿½Ö°ï¿½ï¿½ï¿½ï¿½
 	function moveto_de()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/db_entry.html");
@@ -54,7 +54,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/normal_entry.html");
 	}
 	
-//4ÊÔÓÃÆÚ¹ÜÀí£º	
+//4ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½	
 	function moveto_tm()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/try_manage.html");
@@ -68,7 +68,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/try_search.html");
 	}
 	
-//5²¿ÃÅµ÷¶¯¹ÜÀí£º
+//5ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	function moveto_smove()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/section_move.html");
@@ -78,7 +78,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/section_move_search.html");
 	}
 	
-//6¸ÚÎ»µ÷¶¯¹ÜÀí£º
+//6ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	function moveto_pmove()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/position_move.html");
@@ -88,7 +88,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/position_move_search.html");
 	}
 	
-//7Ô±¹¤ÀëÖ°¹ÜÀí£º
+//7Ô±ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½ï¿½
 
 	
 	
@@ -102,7 +102,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/leave_search.html");
 	}
 	
-//8Ô±¹¤ÐÅÏ¢ÖÐÐÄ£º	
+//8Ô±ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ä£ï¿½	
 	function moveto_im()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/info_modify.html");
@@ -120,7 +120,7 @@
 	document.getElementById("iframe_main").setAttribute("src","html/info_show.html");
 	}
 	
-//9±¨±í¹ÜÀí	:
+//9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	:
 	function moveto_cn()
 {
 	document.getElementById("iframe_main").setAttribute("src","html/chart_new.html");

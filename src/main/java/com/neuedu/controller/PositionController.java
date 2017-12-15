@@ -2,7 +2,6 @@ package com.neuedu.controller;
 
 import com.neuedu.pojo.PositionPojo;
 import com.neuedu.service.PositionService;
-import com.neuedu.service.serviceImpl.PositionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
