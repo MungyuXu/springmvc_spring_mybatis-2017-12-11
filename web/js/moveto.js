@@ -1,4 +1,4 @@
-	//���Ź���
+	// ���Ź���
 	
 	function moveto_sa()
 {
@@ -28,11 +28,11 @@
 	}
 	function moveto_pm()
 {
-	document.getElementById("iframe_main").setAttribute("src","html/position_modify.html");
+	document.getElementById("iframe_main").setAttribute("src","html/position_queryAll.do");
 	}
 	function moveto_pd()
 {
-	document.getElementById("iframe_main").setAttribute("src","html/position_delete.html");
+	document.getElementById("iframe_main").setAttribute("src","html/position_delete.do");
 	}
 	function moveto_ps()
 {

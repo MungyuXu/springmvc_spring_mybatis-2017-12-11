@@ -6,6 +6,8 @@ import com.neuedu.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PositionServiceImpl implements PositionService {
 
@@ -17,4 +19,14 @@ public class PositionServiceImpl implements PositionService {
         positionMapper.add(position);
         return 0;
     }
+    @Override
+    public List<PositionPojo> queryAll() {
+        return positionMapper.queryAll();
+    }
+
+    @Override
+    public void dele(String[] positions) {
+        positionMapper.dele(positions);
+    }
+
 }

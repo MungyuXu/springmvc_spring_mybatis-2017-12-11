@@ -55,27 +55,7 @@
             <td>${list.s_setdate}</td>
         </tr>
     </c:forEach>
-  <%--<tr  id="tr_color">--%>
-   <%--<td><input name="check" type="checkbox" value="" /></td>--%>
-    <%--<td>1</td>--%>
-    <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-    <%--<td>1</td>--%>
-    <%--<td>1</td>--%>
-  <%--</tr>--%>
-  <%--<tr>--%>
-  <%--<td><input  name="check" type="checkbox" value=""/></td>--%>
-    <%--<td>2</td>--%>
-    <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-    <%--<td>2</td>--%>
-    <%--<td>2</td>--%>
-  <%--</tr>--%>
-  <%--<tr id="tr_color">--%>
-  <%--<td><input  name="check"  type="checkbox" value=""/></td>--%>
-    <%--<td>3</td>--%>
-    <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-    <%--<td>3</td>--%>
-    <%--<td>3</td>--%>
-  <%--</tr>--%>
+
 </table>
     <br />
     <div align="right">

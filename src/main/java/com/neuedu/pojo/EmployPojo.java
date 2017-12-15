@@ -9,7 +9,7 @@ public class EmployPojo {
     private Date ebdate;
     private int eid;
     private  String esection;
-    private  String epositior;
+    private  String eposition;
     private  String etype;
     private  String efrom;
     private  String e_entrydate;
@@ -63,12 +63,12 @@ public class EmployPojo {
         this.esection = esection;
     }
 
-    public String getEpositior() {
-        return epositior;
+    public String getEposition() {
+        return eposition;
     }
 
-    public void setEpositior(String eposition) {
-        this.epositior = eposition;
+    public void setEposition(String eposition) {
+        this.eposition = eposition;
     }
 
     public String getEtype() {

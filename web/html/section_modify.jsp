@@ -47,7 +47,7 @@
   </tr>
     <c:forEach items="${sectionList}" var="list">
   <tr  id="tr_color">
-   <td><input name="" type="checkbox" value="" disabled="disabled"/></td>
+   <td><input name="check" type="checkbox" value="" disabled="disabled"/></td>
     <td>${list.sno}</td>
     <td><a href="#div_bottom"  onclick="showBottom()">${list.sname}</a></td>
     <td>${list.stype}</td>
