@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmployPojo {
     private int eno;
-    public String ename;
+    private String ename;
     private String egender;
     private Date ebdate;
     private int eid;
@@ -27,7 +27,7 @@ public class EmployPojo {
         return ename;
     }
 
-    public void setEname(String empname) {
+    public void setEname(String ename) {
         this.ename = ename;
     }
 
@@ -102,5 +102,4 @@ public class EmployPojo {
     public void setEattenddate(String eattenddate) {
         this.eattenddate = eattenddate;
     }
-
 }

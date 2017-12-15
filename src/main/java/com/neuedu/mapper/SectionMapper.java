@@ -8,4 +8,5 @@ public interface  SectionMapper {
     public void add(SectionPojo section);
     public List<SectionPojo> queryAll();
     public void dele(String[] sectionSno);
+    public List<SectionPojo> queryByName(SectionPojo section);
 }
