@@ -56,8 +56,6 @@ public class SectionController {
     }
     @RequestMapping(value = "position_queryByName")
     public @ResponseBody List<SectionPojo>  queryByName (@RequestBody SectionPojo section){
-        System.out.println("!!!!");
-        List<SectionPojo> sectionPojos = sectionService.queryByName(section);
-            return sectionPojos;
+            return sectionService.queryByName(section);
     }
 }
