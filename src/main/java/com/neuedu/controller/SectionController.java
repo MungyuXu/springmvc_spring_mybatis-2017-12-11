@@ -19,9 +19,8 @@ public class SectionController {
     SectionService sectionService;
 
     //新增部门
-    @RequestMapping(value = "sectionAdd")
+        @RequestMapping(value = "sectionAdd")
     public String add(SectionPojo section) {
-        System.out.println("222");
         sectionService.add(section);
         return "redirect:section_queryAll.do";
     }

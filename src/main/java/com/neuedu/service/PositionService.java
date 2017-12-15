@@ -8,4 +8,6 @@ import java.util.List;
 public interface PositionService {
     public int add(PositionPojo position);
 //    public List<PositionPojo> queryAll();
+public List<PositionPojo> queryAll();
+    public void dele(String[] positions);
 }

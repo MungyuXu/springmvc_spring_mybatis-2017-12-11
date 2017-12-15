@@ -5,4 +5,13 @@
         insert into position1(pno, pname, ptype, pnum)
          values(${pno},#{pname},#{ptype},#{pnum})
     </insert>
+    <select id="queryAll" resultType="com.neuedu.pojo.PositionPojo">
+        SELECT *  FROM position1
+    </select>
+    <delete id="dele">
+        DELETE FROM position1 WHERE pno IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
 </mapper>
