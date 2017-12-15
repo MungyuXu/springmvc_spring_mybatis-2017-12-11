@@ -27,7 +27,7 @@ public class EmployPojo {
         return ename;
     }
 
-    public void setEname(String empname) {
+    public void setEname(String ename) {
         this.ename = ename;
     }
 
@@ -102,5 +102,4 @@ public class EmployPojo {
     public void setEattenddate(String eattenddate) {
         this.eattenddate = eattenddate;
     }
-
 }
