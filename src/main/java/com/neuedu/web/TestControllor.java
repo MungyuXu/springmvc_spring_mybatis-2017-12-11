@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.neuedu.pojo.EmployPojo;
+import com.neuedu.pojo.Emp;
 
 
 /**
@@ -16,12 +16,12 @@ import com.neuedu.pojo.EmployPojo;
 @Controller
 public class TestControllor {
     @RequestMapping(value = "regist")
-    public String regist(EmployPojo emp){
+    public String regist(Emp emp){
         System.out.println("OK");
         return "ok";
     }
     @RequestMapping(value = "query")
-    public ModelAndView query(EmployPojo emp){
+    public ModelAndView query(Emp emp){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("Emp",emp);
         modelAndView.addObject("tmp","成功2");
