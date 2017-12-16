@@ -11,7 +11,7 @@
     <link href="../css/css.css" rel="stylesheet" type="text/css"/>
     <script src="../js/Calendar.js" type="text/javascript"></script>
     <script src="../js/iframe.js" type="text/javascript"></script>
-    <script src="../js/valid.js" type="text/javascript"></script>
+    <script src="<%=basePath%>../js/valid.js" type="text/javascript"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <%--<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>--%>
     <%--<script src="../js/jquery-3.2.1.js" type="text/javascript"></script>--%>
@@ -19,12 +19,13 @@
     <title>修改部门</title>
     <script>
         function toQuery() {
+            <%--alert(${basePath});--%>
             while ($("#tr_color").length > 0) {
                 $("#tr_color").remove();
             }
             $.ajax({
                 type: 'post',
-                url: 'position_queryByName.do',
+                url: 'section_queryByName.do',
                 contentType: 'application/json;charset=utf-8',
                 //通过id取表格对象转换成json格式
                 data: JSON.stringify($('#search').serializeObject()),
@@ -36,7 +37,7 @@
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                         var td3 = '<td>' + position.sno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.sname + '</a></td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="javascript:showBottom()">' + position.sname + '</a></td>';
                         var td5 = '<td>' + position.stype + '</td>';
                         var td6 = '<td>' + position.s_setdate + '</td>';
                         var td7 = '</tr>';
@@ -47,6 +48,12 @@
             });
         }
     </script>
+    <%--<script>--%>
+        <%--function showBottom() {--%>
+            <%--alert("1111111111111");--%>
+            <%--document.getElementById("div_bottom").style.display = "none";--%>
+        <%--}--%>
+    <%--</script>--%>
 </head>
 
 <body>
@@ -66,6 +73,9 @@
     <input class="button" type="button" value="查询" onclick="toQuery()"/>
 </form>
 <hr/>
+
+<input type="button" value="111" onClick="javascript:showBottom()"/>
+
 <div id="div_center">
     <span class="span_text">查询结果：</span>
     <br/>
@@ -81,7 +91,7 @@
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
                 <td>${list.sno}</td>
-                <td><a href="#div_bottom" onclick="showBottom()">${list.sname}</a></td>
+                <td><a href="#div_bottom" onclick="javascript:showBottom()">${list.sname}</a></td>
                 <td>${list.stype}</td>
                 <td>${list.s_setdate}</td>
             </tr>

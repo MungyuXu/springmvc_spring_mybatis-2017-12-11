@@ -54,7 +54,7 @@ public class SectionController {
         }
         return "redirect:section_delete.do";
     }
-    @RequestMapping(value = "position_queryByName")
+    @RequestMapping(value = "section_queryByName")
     public @ResponseBody List<SectionPojo>  queryByName (@RequestBody SectionPojo section){
             return sectionService.queryByName(section);
     }
