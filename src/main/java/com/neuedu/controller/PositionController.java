@@ -28,9 +28,10 @@ public class PositionController {
     //修改部门查询
     @RequestMapping(value = "position_queryAll")
     public String queryAll(Model model) {
+        System.out.println("!111111111111111");
         List<PositionPojo> positionList;
         positionList = positionService.queryAll();
-        model.addAttribute("sectionList", positionList);
+        model.addAttribute("positionList", positionList);
         return "html/position_modify";
     }
 
@@ -52,9 +53,8 @@ public class PositionController {
     }
 //requestBody 接受jason格式,ajax后台返回不会跳界面;
     //responsebody返回
-    @RequestMapping(value = "positionQuery")
-    public @ResponseBody ArrayList<PositionPojo> query(@RequestBody PositionPojo position){
-//        positionService.query(position);
-        return positionService.query(position);
+    @RequestMapping(value = "position_queryByName")
+    public @ResponseBody List<PositionPojo> queryByName(@RequestBody PositionPojo position){
+        return positionService.queryByName(position);
     }
 }
