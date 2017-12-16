@@ -11,7 +11,7 @@
     <link href="../css/css.css" rel="stylesheet" type="text/css"/>
     <script src="../js/Calendar.js" type="text/javascript"></script>
     <script src="../js/iframe.js" type="text/javascript"></script>
-    <script src="<%=basePath%>../js/valid.js" type="text/javascript"></script>
+    <script src="../js/valid.js" type="text/javascript"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <%--<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>--%>
     <%--<script src="../js/jquery-3.2.1.js" type="text/javascript"></script>--%>
@@ -19,7 +19,6 @@
     <title>修改部门</title>
     <script>
         function toQuery() {
-            <%--alert(${basePath});--%>
             while ($("#tr_color").length > 0) {
                 $("#tr_color").remove();
             }
