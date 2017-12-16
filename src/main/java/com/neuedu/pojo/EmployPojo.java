@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmployPojo {
     private int eno;
-    public String ename;
+    private String ename;
     private String egender;
     private Date ebdate;
     private int eid;

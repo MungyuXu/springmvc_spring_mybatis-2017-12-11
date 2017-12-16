@@ -30,4 +30,9 @@ public class SectionServiceImpl implements SectionService {
         sectionMapper.dele(sections);
     }
 
+    @Override
+    public List<SectionPojo> queryByName(SectionPojo section) {
+        return sectionMapper.queryByName(section);
+    }
+
 }

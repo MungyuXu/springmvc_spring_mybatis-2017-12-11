@@ -1,192 +1,192 @@
-var months = new Array("Ò»ÔÂ", "¶şÔÂ", "ÈıÔÂ", "ËÄÔÂ", "ÎåÔÂ", "ÁùÔÂ", "ÆßÔÂ", "°ËÔÂ", "¾ÅÔÂ", "Ê®ÔÂ", "Ê®Ò»ÔÂ", "Ê®¶şÔÂ"); 
-var daysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); 
-var days = new Array("ÈÕ","Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù"); 
-var today; 
+var months = new Array("ä¸€æœˆ", "äºŒæœˆ", "ä¸‰æœˆ", "å››æœˆ", "äº”æœˆ", "å…­æœˆ", "ä¸ƒæœˆ", "å…«æœˆ", "ä¹æœˆ", "åæœˆ", "åä¸€æœˆ", "åäºŒæœˆ");
+var daysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+var days = new Array("æ—¥","ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­");
+var today;
 
 document.writeln("<div id='Calendar' style='position:absolute; z-index:1; visibility: hidden; filter:\"progid:DXImageTransform.Microsoft.Shadow(direction=135,color=#ad8634,strength=3)\"'></div>");
 
 function getDays(month, year)
-{ 
- //ÏÂÃæµÄÕâ¶Î´úÂëÊÇÅĞ¶Ïµ±Ç°ÊÇ·ñÊÇÈòÄêµÄ 
- if (1 == month) 
-  return ((0 == year % 4) && (0 != (year % 100))) || (0 == year % 400) ? 29 : 28; 
- else 
-  return daysInMonth[month]; 
-} 
-
-function getToday() 
-{ 
- //µÃµ½½ñÌìµÄÄê,ÔÂ,ÈÕ 
- this.now = new Date(); 
- this.year = this.now.getFullYear(); 
- this.month = this.now.getMonth(); 
- this.day = this.now.getDate(); 
+{
+    //ä¸‹é¢çš„è¿™æ®µä»£ç æ˜¯åˆ¤æ–­å½“å‰æ˜¯å¦æ˜¯é—°å¹´çš„
+    if (1 == month)
+        return ((0 == year % 4) && (0 != (year % 100))) || (0 == year % 400) ? 29 : 28;
+    else
+        return daysInMonth[month];
 }
 
-function getStringDay(str) 
-{ 
- //µÃµ½ÊäÈë¿òµÄÄê,ÔÂ,ÈÕ
- var str=str.split("-")
- 
- this.now = new Date(parseFloat(str[0]),parseFloat(str[1])-1,parseFloat(str[2])); 
- this.year = this.now.getFullYear(); 
- this.month = this.now.getMonth(); 
- this.day = this.now.getDate(); 
+function getToday()
+{
+    //å¾—åˆ°ä»Šå¤©çš„å¹´,æœˆ,æ—¥
+    this.now = new Date();
+    this.year = this.now.getFullYear();
+    this.month = this.now.getMonth();
+    this.day = this.now.getDate();
 }
 
-function newCalendar() { 
- var parseYear = parseInt(document.all.Year.options[document.all.Year.selectedIndex].value); 
- var newCal = new Date(parseYear, document.all.Month.selectedIndex, 1); 
- var day = -1; 
- var startDay = newCal.getDay(); 
- var daily = 0; 
- 
- if ((today.year == newCal.getFullYear()) &&(today.month == newCal.getMonth())) 
-  day = today.day; 
-  
- var tableCal = document.all.calendar; 
- var intDaysInMonth =getDays(newCal.getMonth(), newCal.getFullYear());
-  
- for (var intWeek = 1; intWeek < tableCal.rows.length;intWeek++) 
-  for (var intDay = 0;intDay < tableCal.rows[intWeek].cells.length;intDay++) 
-  { 
-   var cell = tableCal.rows[intWeek].cells[intDay]; 
-   if ((intDay == startDay) && (0 == daily)) 
-    daily = 1; 
-    
-   if(day==daily) //½ñÌì£¬µ÷ÓÃ½ñÌìµÄClass 
-   {
-    cell.style.background='#CCBA66';
-    cell.style.color='#FFFFFF';
-    //cell.style.fontWeight='bold';
-   }
-   else if(intDay==6) //ÖÜÁù 
-    cell.style.color='green'; 
-   else if (intDay==0) //ÖÜÈÕ 
-    cell.style.color='red';
-   
-   if ((daily > 0) && (daily <= intDaysInMonth)) 
-   { 
-    cell.innerText = daily; 
-    daily++; 
-   } 
-   else 
-    cell.innerText = ""; 
-  } 
-} 
+function getStringDay(str)
+{
+    //å¾—åˆ°è¾“å…¥æ¡†çš„å¹´,æœˆ,æ—¥
+    var str=str.split("-")
+
+    this.now = new Date(parseFloat(str[0]),parseFloat(str[1])-1,parseFloat(str[2]));
+    this.year = this.now.getFullYear();
+    this.month = this.now.getMonth();
+    this.day = this.now.getDate();
+}
+
+function newCalendar() {
+    var parseYear = parseInt(document.all.Year.options[document.all.Year.selectedIndex].value);
+    var newCal = new Date(parseYear, document.all.Month.selectedIndex, 1);
+    var day = -1;
+    var startDay = newCal.getDay();
+    var daily = 0;
+
+    if ((today.year == newCal.getFullYear()) &&(today.month == newCal.getMonth()))
+        day = today.day;
+
+    var tableCal = document.all.calendar;
+    var intDaysInMonth =getDays(newCal.getMonth(), newCal.getFullYear());
+
+    for (var intWeek = 1; intWeek < tableCal.rows.length;intWeek++)
+        for (var intDay = 0;intDay < tableCal.rows[intWeek].cells.length;intDay++)
+        {
+            var cell = tableCal.rows[intWeek].cells[intDay];
+            if ((intDay == startDay) && (0 == daily))
+                daily = 1;
+
+            if(day==daily) //ä»Šå¤©ï¼Œè°ƒç”¨ä»Šå¤©çš„Class
+            {
+                cell.style.background='#CCBA66';
+                cell.style.color='#FFFFFF';
+                //cell.style.fontWeight='bold';
+            }
+            else if(intDay==6) //å‘¨å…­
+                cell.style.color='green';
+            else if (intDay==0) //å‘¨æ—¥
+                cell.style.color='red';
+
+            if ((daily > 0) && (daily <= intDaysInMonth))
+            {
+                cell.innerText = daily;
+                daily++;
+            }
+            else
+                cell.innerText = "";
+        }
+}
 
 function GetDate(InputBox)
-{ 
- var sDate; 
- //Õâ¶Î´úÂë´¦ÀíÊó±êµã»÷µÄÇé¿ö 
- if (event.srcElement.tagName == "TD") 
-  if (event.srcElement.innerText != "") 
-  { 
-   sDate = document.all.Year.value + "-" + document.all.Month.value + "-" + event.srcElement.innerText;
-   eval("document.all."+InputBox).value=sDate;
-   HiddenCalendar();
-  } 
-} 
+{
+    var sDate;
+    //è¿™æ®µä»£ç å¤„ç†é¼ æ ‡ç‚¹å‡»çš„æƒ…å†µ
+    if (event.srcElement.tagName == "TD")
+        if (event.srcElement.innerText != "")
+        {
+            sDate = document.all.Year.value + "-" + document.all.Month.value + "-" + event.srcElement.innerText;
+            eval("document.all."+InputBox).value=sDate;
+            HiddenCalendar();
+        }
+}
 
 function HiddenCalendar()
 {
- //¹Ø±ÕÑ¡Ôñ´°¿Ú
- document.all.Calendar.style.visibility='hidden';
+    //å…³é—­é€‰æ‹©çª—å£
+    document.all.Calendar.style.visibility='hidden';
 }
 
 function ShowCalendar(InputBox)
 {
- var x,y,intLoop,intWeeks,intDays;
- var DivContent;
- var year,month,day;
- //var o=document.getElementById(InputBox);
- var o=InputBox;
- var oid=o.id;
- var thisyear; //ÕæÕıµÄ½ñÄêÄê·İ
- 
- if(!oid)oid=o.name;
- 
- thisyear=new getToday();
- thisyear=thisyear.year;
- 
- today = o.value;
- if(isDate(today))
-  today = new getStringDay(today);
- else
-  today = new getToday(); 
- 
- //ÏÔÊ¾µÄÎ»ÖÃ
- x=o.offsetLeft;
- y=o.offsetTop;
- while(o=o.offsetParent)
- {
-  x+=o.offsetLeft;
-  y+=o.offsetTop;
- }
- document.all.Calendar.style.left=x+2;
- document.all.Calendar.style.top=y+20;
- document.all.Calendar.style.visibility="visible";
- 
- //ÏÂÃæ¿ªÊ¼Êä³öÈÕÀú±í¸ñ(border-color:#9DBAF7)
- DivContent="<table border='0' cellspacing='0' style='border:1px solid #ad8634; background-color:#F5E4A1'>";
- DivContent+="<tr>";
- DivContent+="<td style='border-bottom:1px solid #ad8634; background-color:#ad8634'>";
- 
- //Äê
- DivContent+="<select name='Year' id='Year' onChange='newCalendar()' style='font-family:Verdana; font-size:12px'>";
- for (intLoop = thisyear - 100; intLoop < (thisyear + 2); intLoop++) 
-  DivContent+="<option value= " + intLoop + " " + (today.year == intLoop ? "Selected" : "") + ">" + intLoop + "</option>"; 
- DivContent+="</select>";
- 
- //ÔÂ
- DivContent+="<select name='Month' id='Month' onChange='newCalendar()' style='font-family:Verdana; font-size:12px'>";
- for (intLoop = 0; intLoop < months.length; intLoop++) 
-  DivContent+="<option value= " + (intLoop + 1) + " " + (today.month == intLoop ? "Selected" : "") + ">" + months[intLoop] + "</option>"; 
- DivContent+="</select>";
- 
- DivContent+="</td>";
- 
- DivContent+="<td style='border-bottom:1px solid #ad8634; background-color:#FAF1C7; font-weight:bold; font-family:Wingdings 2,Wingdings,Webdings; font-size:16px; padding-top:2px; color:#ad8634; cursor:hand' align='center' title='¹Ø±Õ' onClick='javascript:HiddenCalendar()'>S</td>";
- DivContent+="</tr>";
-  
- DivContent+="<tr><td align='center' colspan='2'>";
- DivContent+="<table id='calendar' border='0' width='100%'>";
- 
- //ĞÇÆÚ
- DivContent+="<tr>";
- for (intLoop = 0; intLoop < days.length; intLoop++) 
-  DivContent+="<td align='center' style='font-size:12px'>" + days[intLoop] + "</td>"; 
- DivContent+="</tr>";
- 
- //Ìì
- for (intWeeks = 0; intWeeks < 6; intWeeks++)
- { 
-  DivContent+="<tr>"; 
-  for (intDays = 0; intDays < days.length; intDays++) 
-   DivContent+="<td onClick='GetDate(\"" + oid + "\")' style='cursor:hand; border-right:1px solid #ad8634; border-bottom:1px solid #ad8634; color:#ad8634; font-family:Verdana; font-size:12px' align='center'></td>"; 
-  DivContent+="</tr>"; 
- } 
- DivContent+="</table></td></tr></table>";
+    var x,y,intLoop,intWeeks,intDays;
+    var DivContent;
+    var year,month,day;
+    //var o=document.getElementById(InputBox);
+    var o=InputBox;
+    var oid=o.id;
+    var thisyear; //çœŸæ­£çš„ä»Šå¹´å¹´ä»½
 
- document.all.Calendar.innerHTML=DivContent;
- newCalendar();
+    if(!oid)oid=o.name;
+
+    thisyear=new getToday();
+    thisyear=thisyear.year;
+
+    today = o.value;
+    if(isDate(today))
+        today = new getStringDay(today);
+    else
+        today = new getToday();
+
+    //æ˜¾ç¤ºçš„ä½ç½®
+    x=o.offsetLeft;
+    y=o.offsetTop;
+    while(o=o.offsetParent)
+    {
+        x+=o.offsetLeft;
+        y+=o.offsetTop;
+    }
+    document.all.Calendar.style.left=x+2;
+    document.all.Calendar.style.top=y+20;
+    document.all.Calendar.style.visibility="visible";
+
+    //ä¸‹é¢å¼€å§‹è¾“å‡ºæ—¥å†è¡¨æ ¼(border-color:#9DBAF7)
+    DivContent="<table border='0' cellspacing='0' style='border:1px solid #ad8634; background-color:#F5E4A1'>";
+    DivContent+="<tr>";
+    DivContent+="<td style='border-bottom:1px solid #ad8634; background-color:#ad8634'>";
+
+    //å¹´
+    DivContent+="<select name='Year' id='Year' onChange='newCalendar()' style='font-family:Verdana; font-size:12px'>";
+    for (intLoop = thisyear - 100; intLoop < (thisyear + 2); intLoop++)
+        DivContent+="<option value= " + intLoop + " " + (today.year == intLoop ? "Selected" : "") + ">" + intLoop + "</option>";
+    DivContent+="</select>";
+
+    //æœˆ
+    DivContent+="<select name='Month' id='Month' onChange='newCalendar()' style='font-family:Verdana; font-size:12px'>";
+    for (intLoop = 0; intLoop < months.length; intLoop++)
+        DivContent+="<option value= " + (intLoop + 1) + " " + (today.month == intLoop ? "Selected" : "") + ">" + months[intLoop] + "</option>";
+    DivContent+="</select>";
+
+    DivContent+="</td>";
+
+    DivContent+="<td style='border-bottom:1px solid #ad8634; background-color:#FAF1C7; font-weight:bold; font-family:Wingdings 2,Wingdings,Webdings; font-size:16px; padding-top:2px; color:#ad8634; cursor:hand' align='center' title='å…³é—­' onClick='javascript:HiddenCalendar()'>S</td>";
+    DivContent+="</tr>";
+
+    DivContent+="<tr><td align='center' colspan='2'>";
+    DivContent+="<table id='calendar' border='0' width='100%'>";
+
+    //æ˜ŸæœŸ
+    DivContent+="<tr>";
+    for (intLoop = 0; intLoop < days.length; intLoop++)
+        DivContent+="<td align='center' style='font-size:12px'>" + days[intLoop] + "</td>";
+    DivContent+="</tr>";
+
+    //å¤©
+    for (intWeeks = 0; intWeeks < 6; intWeeks++)
+    {
+        DivContent+="<tr>";
+        for (intDays = 0; intDays < days.length; intDays++)
+            DivContent+="<td onClick='GetDate(\"" + oid + "\")' style='cursor:hand; border-right:1px solid #ad8634; border-bottom:1px solid #ad8634; color:#ad8634; font-family:Verdana; font-size:12px' align='center'></td>";
+        DivContent+="</tr>";
+    }
+    DivContent+="</table></td></tr></table>";
+
+    document.all.Calendar.innerHTML=DivContent;
+    newCalendar();
 }
 
 function isDate(dateStr)
-{ 
- var datePat = /^(\d{4})(\-)(\d{1,2})(\-)(\d{1,2})$/;
- var matchArray = dateStr.match(datePat);
- if (matchArray == null) return false; 
- var month = matchArray[3];
- var day = matchArray[5]; 
- var year = matchArray[1]; 
- if (month < 1 || month > 12) return false; 
- if (day < 1 || day > 31) return false; 
- if ((month==4 || month==6 || month==9 || month==11) && day==31) return false; 
- if (month == 2)
- {
-  var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)); 
-  if (day > 29 || (day==29 && !isleap)) return false; 
- } 
- return true;
+{
+    var datePat = /^(\d{4})(\-)(\d{1,2})(\-)(\d{1,2})$/;
+    var matchArray = dateStr.match(datePat);
+    if (matchArray == null) return false;
+    var month = matchArray[3];
+    var day = matchArray[5];
+    var year = matchArray[1];
+    if (month < 1 || month > 12) return false;
+    if (day < 1 || day > 31) return false;
+    if ((month==4 || month==6 || month==9 || month==11) && day==31) return false;
+    if (month == 2)
+    {
+        var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        if (day > 29 || (day==29 && !isleap)) return false;
+    }
+    return true;
 }

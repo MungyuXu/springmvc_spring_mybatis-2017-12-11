@@ -14,4 +14,19 @@
             #{item}
         </foreach>
     </delete>
+
+    <select id="queryByName" parameterType="com.neuedu.pojo.SectionPojo" resultType="com.neuedu.pojo.SectionPojo">
+        SELECT * FROM section
+        <where>
+        <if test= "sno!= null and sno != ''">
+            AND sno like '%${sno}%'
+        </if>
+        <if test="sname != null and sname != ''">
+            AND sname like '%${sname}%'
+        </if>
+        <if test="stype != null and stype != ''">
+            AND stype LIKE '%${stype}%'
+        </if>
+        </where>
+    </select>
 </mapper>

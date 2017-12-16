@@ -10,4 +10,5 @@ public interface SectionService {
     public int add(SectionPojo section);
     public List<SectionPojo> queryAll();
     public void dele(String[] sections);
+    public List<SectionPojo> queryByName(SectionPojo section);
 }
