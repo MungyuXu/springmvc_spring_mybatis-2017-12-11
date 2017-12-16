@@ -28,7 +28,7 @@
                 //通过id取表格对象转换成json格式
                 data: JSON.stringify($('#search').serializeObject()),
                 success: function (data) {
-                    var trc = $("#table_list");
+                    var trc = $("#table_search");
                     var meg = "";
                     //循环追加表单
                     $.each(data, function (index, position) {
@@ -74,7 +74,7 @@
 <div id="div_center">
     <span class="span_text">查询结果：</span>
     <br/>
-    <table class="table_list" width="450px" height="100px" border="0" align="center">
+    <table id="table_search" class="table_list" width="450px" height="100px" border="0" align="center">
 
         <tr id="tr_title">
             <td width="25">&nbsp;</td>
@@ -92,27 +92,6 @@
                 <td>${list.pnum}</td>
             </tr>
         </c:forEach>
-        <%--<tr id="tr_color">--%>
-        <%--<td><input name="" type="checkbox" value="" disabled="disabled"/></td>--%>
-        <%--<td>1</td>--%>
-        <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-        <%--<td>1</td>--%>
-        <%--<td>1</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td><input name="" type="checkbox" value="" disabled="disabled"/></td>--%>
-        <%--<td>2</td>--%>
-        <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-        <%--<td>2</td>--%>
-        <%--<td>2</td>--%>
-        <%--</tr>--%>
-        <%--<tr id="tr_color">--%>
-        <%--<td><input name="" type="checkbox" value="" disabled="disabled"/></td>--%>
-        <%--<td>3</td>--%>
-        <%--<td><a href="#div_bottom" onclick="showBottom()">1</a></td>--%>
-        <%--<td>3</td>--%>
-        <%--<td>3</td>--%>
-        <%--</tr>--%>
     </table>
 </div><!--div for div_center-->
 <div id="div_bottom" style="display:none">
