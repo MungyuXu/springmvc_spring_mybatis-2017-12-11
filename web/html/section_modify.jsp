@@ -11,7 +11,7 @@
     <link href="../css/css.css" rel="stylesheet" type="text/css"/>
     <script src="../js/Calendar.js" type="text/javascript"></script>
     <script src="../js/iframe.js" type="text/javascript"></script>
-    <script src="<%=basePath%>../js/valid.js" type="text/javascript"></script>
+    <script src="../js/valid.js" type="text/javascript"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <%--<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>--%>
     <%--<script src="../js/jquery-3.2.1.js" type="text/javascript"></script>--%>
@@ -19,7 +19,6 @@
     <title>修改部门</title>
     <script>
         function toQuery() {
-            <%--alert(${basePath});--%>
             while ($("#tr_color").length > 0) {
                 $("#tr_color").remove();
             }
@@ -33,20 +32,13 @@
                     var trc = $("#table_search");
                     var meg = "";
                     //循环追加表单
-                    $.each(data, function (index, section) {
+                    $.each(data, function (index, position) {
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
-<<<<<<< HEAD
-                        var td3 = '<td>' + section.sno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + section.sname + '</a></td>';
-                        var td5 = '<td>' + section.stype + '</td>';
-                        var td6 = '<td>' + section.s_setdate + '</td>';
-=======
                         var td3 = '<td>' + position.sno + '</td>';
                         var td4 = '<td><a href="#div_bottom" onclick="javascript:showBottom()">' + position.sname + '</a></td>';
                         var td5 = '<td>' + position.stype + '</td>';
                         var td6 = '<td>' + position.s_setdate + '</td>';
->>>>>>> master
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
                         trc.append(meg);
@@ -55,12 +47,6 @@
             });
         }
     </script>
-    <%--<script>--%>
-        <%--function showBottom() {--%>
-            <%--alert("1111111111111");--%>
-            <%--document.getElementById("div_bottom").style.display = "none";--%>
-        <%--}--%>
-    <%--</script>--%>
 </head>
 
 <body>
