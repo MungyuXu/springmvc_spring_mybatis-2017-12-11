@@ -33,4 +33,9 @@ public class PositionServiceImpl implements PositionService {
     public ArrayList<PositionPojo> query( PositionPojo position){
         return  positionMapper.query(position);
 }
+
+    @Override
+    public List<PositionPojo> queryByName(PositionPojo position) {
+        return positionMapper.queryByName(position);
+    }
 }

@@ -24,7 +24,7 @@
             }
             $.ajax({
                 type: 'post',
-                url: 'position_queryByName.do',
+                url: 'section_queryByName.do',
                 contentType: 'application/json;charset=utf-8',
                 //通过id取表格对象转换成json格式
                 data: JSON.stringify($('#search').serializeObject()),
@@ -32,13 +32,13 @@
                     var trc = $("#table_search");
                     var meg = "";
                     //循环追加表单
-                    $.each(data, function (index, position) {
+                    $.each(data, function (index, section) {
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
-                        var td3 = '<td>' + position.sno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.sname + '</a></td>';
-                        var td5 = '<td>' + position.stype + '</td>';
-                        var td6 = '<td>' + position.s_setdate + '</td>';
+                        var td3 = '<td>' + section.sno + '</td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + section.sname + '</a></td>';
+                        var td5 = '<td>' + section.stype + '</td>';
+                        var td6 = '<td>' + section.s_setdate + '</td>';
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
                         trc.append(meg);

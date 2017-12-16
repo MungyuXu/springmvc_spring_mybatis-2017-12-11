@@ -19,4 +19,19 @@
     <select id="query" parameterType="com.neuedu.pojo.PositionPojo" resultType="com.neuedu.pojo.PositionPojo">
         select * from position1
     </select>
+
+        <select id="queryByName" parameterType="com.neuedu.pojo.PositionPojo" resultType="com.neuedu.pojo.PositionPojo">
+        SELECT * FROM position1
+        <where>
+            <if test= "pno!= null and pno != ''">
+                AND pno like '%${pno}%'
+            </if>
+            <if test="pname != null and pname != ''">
+                AND pname like '%${pname}%'
+            </if>
+            <if test="ptype != null and ptype != ''">
+                AND ptype LIKE '%${ptype}%'
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -30,7 +30,7 @@ public class PositionController {
     public String queryAll(Model model) {
         List<PositionPojo> positionList;
         positionList = positionService.queryAll();
-        model.addAttribute("sectionList", positionList);
+        model.addAttribute("positionList", positionList);
         return "html/position_modify";
     }
 
@@ -56,5 +56,10 @@ public class PositionController {
     public @ResponseBody ArrayList<PositionPojo> query(@RequestBody PositionPojo position){
 //        positionService.query(position);
         return positionService.query(position);
+    }
+    @RequestMapping(value = "position_queryByName")
+    public @ResponseBody List<PositionPojo>  queryByName (@RequestBody PositionPojo position){
+        List<PositionPojo> positionPojos = positionService.queryByName(position);
+        return positionService.queryByName(position);
     }
 }
