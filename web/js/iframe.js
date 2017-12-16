@@ -1,5 +1,5 @@
 function alls() {
-    var sum = document.getElementsByName("check");//
+    var sum = document.getElementsByName("check");
     for (var i = 0; i < sum.length; i++) {  //循环输出
         if (sum[i].type == "checkbox") {  //判断是否是checkbox
             sum[i].checked = true; //是的话就选中
@@ -37,7 +37,8 @@ function showCenter() {
 }
 
 function showBottom() {
-    document.getElementById("div_bottom").style.display = "";
+    alert("!!!!!!!!!!!");
+    document.getElementById("div_bottom").style.display = "none";
 }
 
 function show(mydiv) {
