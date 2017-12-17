@@ -36,9 +36,27 @@ function showCenter() {
     return false;
 }
 
-function showBottom() {
-    alert("!!!!!!!!!!!");
-    document.getElementById("div_bottom").style.display = "none";
+function showBottom(td_id) {
+    var id = '{"sno":"'+td_id+'"}';
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'section_queryByName.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data:id,
+        success: function (data) {
+            $.each(data, function (index, position) {
+                document.getElementById("sno").value = position.sno;
+                document.getElementById("sname").value = position.sname;
+                $("#sphone").val(position.stype);
+                document.getElementById("sphone").value = position.sphone;
+                document.getElementById("sfax").value = position.sfax;
+                $("#choose_type").val(position.supper);
+                document.getElementById("s_setdate").value = position.s_setdate;
+            })
+        }
+    });
 }
 
 function show(mydiv) {
