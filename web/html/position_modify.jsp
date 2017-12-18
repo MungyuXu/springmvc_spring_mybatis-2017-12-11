@@ -96,27 +96,29 @@
 </div><!--div for div_center-->
 <div id="div_bottom" style="display:none">
     <hr/>
-    <form id="form_position" method="post">
+    <form id="form_position" method="post" action="update.do">
         <span class="span_text">岗位信息：</span>
         <br/>
         <table align="center" width="430px" border="0px">
             <tr>
                 <td><span class="span_table">编号：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="pno" type="text"/></td>
-                <td><span class="span_table">名称：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="pname" type="text"/></td>
+                <td><input class="input_text" name="pno" type="text"  /></td>
+                <%--<td><input class="input_text" name="pno" type="text" value="${list.pno}" readonly="readonly"/></td>--%>
+                <td><span class="span_table" >名称：</span><font class="mark">*</font></td>
+                <td><input class="input_text" name="pname" type="text" /></td>
+                <%--<td><input class="input_text" name="pname" type="text" value="${list.pname}"/></td>--%>
             </tr>
             <tr>
                 <td><span class="span_table">岗位类型：</span><font class="mark">*</font></td>
                 <td><select id="choose_type" name="ptype">
-                    <option value="1" selected="selected">管理</option>
-                    <option value="2">技术</option>
-                    <option value="3">销售</option>
-                    <option value="4">市场</option>
-                    <option value="5">其他</option>
+                    <option value="管理" selected="selected">管理</option>
+                    <option value="技术">技术</option>
+                    <option value="销售">销售</option>
+                    <option value="市场">市场</option>
+                    <option value="其他">其他</option>
                 </select></td>
                 <td><span class="span_table">岗位编制：</span></td>
-                <td><input class="input_text" name="pnum" type="text"/></td>
+                <td><input class="input_text" name="pnum" type="text" value="${list.pnum}"/></td>
             </tr>
 
             <tr>

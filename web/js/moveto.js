@@ -26,15 +26,17 @@ function moveto_pa() {
 function moveto_pm() {
     document.getElementById("iframe_main").setAttribute("src", "html/position_queryAll.do");
 }
-
+//修改
 function moveto_pd() {
     document.getElementById("iframe_main").setAttribute("src", "html/position_delete.do");
 }
 
+// function moveto_ps() {
+//     document.getElementById("iframe_main").setAttribute("src", "html/positon_search.html");
+// }
 function moveto_ps() {
-    document.getElementById("iframe_main").setAttribute("src", "html/positon_search.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/position_queryAll.do");
 }
-
 function moveto_ps1() {
     document.getElementById("iframe_main").setAttribute("src", "html/positon_search1.html");
 }
@@ -69,8 +71,10 @@ function moveto_smove() {
 function moveto_sms() {
     document.getElementById("iframe_main").setAttribute("src", "html/section_move_search.html");
 }
-
 function moveto_pmove() {
+    document.getElementById("iframe_main").setAttribute("src", "html/employ_queryAll.do");
+}
+function moveto_pmove1() {
     document.getElementById("iframe_main").setAttribute("src", "html/position_move.html");
 }
 
@@ -88,14 +92,18 @@ function moveto_ls() {
 }
 
 
-function moveto_im() {
+function moveto_im1() {
     document.getElementById("iframe_main").setAttribute("src", "html/info_modify.html");
 }
-
-function moveto_is() {
+function moveto_im() {
+    document.getElementById("iframe_main").setAttribute("src", "html/employ_queryAll.do");
+}
+function moveto_is1() {
     document.getElementById("iframe_main").setAttribute("src", "html/info_search.html");
 }
-
+function moveto_is() {
+    document.getElementById("iframe_main").setAttribute("src", "html/employ_queryAll.do");
+}
 function moveto_im1() {
     document.getElementById("iframe_main").setAttribute("src", "html/info_modify1.html");
 }

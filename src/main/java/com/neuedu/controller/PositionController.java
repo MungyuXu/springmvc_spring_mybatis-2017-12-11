@@ -57,4 +57,9 @@ public class PositionController {
     public @ResponseBody List<PositionPojo> queryByName(@RequestBody PositionPojo position){
         return positionService.queryByName(position);
     }
+@RequestMapping (value ="update")
+    public  String update(PositionPojo position){
+        positionService.update(position);
+    return "redirect:position_queryAll.do";
+}
 }
