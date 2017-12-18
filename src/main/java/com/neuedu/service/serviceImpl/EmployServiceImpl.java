@@ -35,4 +35,8 @@ public class EmployServiceImpl implements EmployService {
         employMapper.update(employ);
 
     }
+    @Override
+    public List<EmployPojo> epmove_queryAll() {
+        return employMapper.queryAll();
+    }
 }

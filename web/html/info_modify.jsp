@@ -33,6 +33,7 @@
                   var meg = "";
                   //循环追加表单
                   $.each(data, function (index, position) {
+
                       var td1 = '<tr id="tr_color">';
                       var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                       var td3 = '<td>' + position.eno + '</td>';
@@ -49,13 +50,6 @@
   </script>
 </head>
 
-<tr id="tr_color">
-  <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
-  <td>1</td>
-  <td><a href="#div_bottom" onclick="showBottom()">2稳定</a></td>
-  <td>女</td>
-  <td>2</td>
-</tr>
 
 
 <body>
