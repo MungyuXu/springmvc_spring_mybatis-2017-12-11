@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.PositionMoveMapper">
+
+    <select id="queryAll" resultType="com.neuedu.pojo.PositionMovePojo">
+        SELECT *  FROM pmove as a ,employ as b
+        WHERE  a.q_eno=b.eno
+    </select>
+        <select id="queryByName" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
+        SELECT * FROM pmove as a ,employ as b
+            <where>  a.q_eno=b.eno
+            <if test= "q_eno!= null and q_eno != ''">
+                AND q_eno like '%${q_eno}%'
+            </if>
+            <if test="q_ename != null and q_ename != ''">
+                AND q_ename like '%${q_ename}%'
+            </if>
+            <if test="q_method != null and q_method != ''">
+                AND q_method LIKE '%${q_method}%'
+            </if>
+            <if test="q_start != null and q_start != ''">
+                AND q_start LIKE '%${q_start}%'
+            </if>
+            <if test="end != null and end != ''">
+                AND "end" LIKE '%${end}%'
+            </if>
+            </where>
+    </select>
+
+    <select id="update" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
+        update position1 SET
+        pname=#{pname},ptype=#{ptype},pnum=#{pnum} where pno=#{pno}
+
+    </select>
+</mapper>

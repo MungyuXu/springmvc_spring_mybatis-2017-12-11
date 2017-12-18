@@ -46,12 +46,12 @@
     <td width="99">部门</td>
     <td width="104">岗位</td>
   </tr>
-  <c:forEach items="${employList}" var="list">
+  <c:forEach items="${employList},${positionMoveList}" var="list">
     <tr id="tr_color">
       <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
-      <td>${list.eno}</td>
+      <td>${list.q_eno}</td>
       <td><a href="#div_bottom" onclick="showBottom()">${list.ename}</a></td>
-      <td>${list.sno}</td>
+      <td>${list.q_sno}</td>
       <td>${list.esection}</td>
       <td>${list.eposition}</td>
     </tr>

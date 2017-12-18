@@ -9,4 +9,5 @@ public interface EmployService {
     public List<EmployPojo> queryAll();
     public List<EmployPojo> queryByName(EmployPojo employ);
     public  void update(EmployPojo employ);
+    public List<EmployPojo> epmove_queryAll();
 }

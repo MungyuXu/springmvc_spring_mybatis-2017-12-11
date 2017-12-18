@@ -71,17 +71,22 @@ function moveto_smove() {
 function moveto_sms() {
     document.getElementById("iframe_main").setAttribute("src", "html/section_move_search.html");
 }
+// function moveto_pmove() {
+//     document.getElementById("iframe_main").setAttribute("src", "html/position_move_queryAll.do");
+// }
 function moveto_pmove() {
-    document.getElementById("iframe_main").setAttribute("src", "html/employ_queryAll.do");
+    document.getElementById("iframe_main").setAttribute("src", "html/epmove_queryAll.do");
 }
 function moveto_pmove1() {
     document.getElementById("iframe_main").setAttribute("src", "html/position_move.html");
 }
 
 function moveto_pms() {
-    document.getElementById("iframe_main").setAttribute("src", "html/position_move_search.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/position_move_queryAll.do");
 }
-
+// function moveto_pms() {
+//     document.getElementById("iframe_main").setAttribute("src", "html/position_move_search.html");
+// }
 
 function moveto_l() {
     document.getElementById("iframe_main").setAttribute("src", "html/leave.html");

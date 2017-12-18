@@ -26,4 +26,9 @@
         update employ SET
         ename=#{ename},egender=#{egender},ebdate=#{ebdate},eid=#{eid},esection=#{esection},eposition=#{eposition},etype=#{etype},efrom=#{efrom},e_entrydate=#{e_entrydate},eattenddate=#{eattenddate} where eno=#{eno}
     </select>
+
+    <select id="epmove_queryAll" resultType="com.neuedu.pojo.EmployPojo">
+        SELECT *  FROM employ as a,smove as b
+        WHERE  a.eno=b.q_eno
+    </select>
 </mapper>

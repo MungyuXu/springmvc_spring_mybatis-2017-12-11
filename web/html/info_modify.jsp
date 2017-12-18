@@ -33,6 +33,7 @@
                   var meg = "";
                   //循环追加表单
                   $.each(data, function (index, position) {
+
                       var td1 = '<tr id="tr_color">';
                       var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                       var td3 = '<td>' + position.eno + '</td>';
@@ -48,6 +49,7 @@
       }
   </script>
 </head>
+
 <body>
 <span class="span_title">修改员工信息：</span>
 <hr />

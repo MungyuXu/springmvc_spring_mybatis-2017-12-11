@@ -44,5 +44,13 @@ public class EmployController {
         employService.update(employ);
         return "redirect:employ_queryAll.do";
     }
+
+    @RequestMapping(value = "epmove_queryAll")
+    public String epmove_queryAll(Model model) {
+        List<EmployPojo> employList;
+        employList = employService.queryAll();
+        model.addAttribute("employList", employList);
+        return "html/position_move";
+    }
 }
 
