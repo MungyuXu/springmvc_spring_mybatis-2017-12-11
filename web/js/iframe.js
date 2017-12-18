@@ -1,30 +1,30 @@
 function alls() {
     var sum = document.getElementsByName("check");
-    for (var i = 0; i < sum.length; i++) {  //Ñ­»·Êä³ö
-        if (sum[i].type == "checkbox") {  //ÅÐ¶ÏÊÇ·ñÊÇcheckbox
-            sum[i].checked = true; //ÊÇµÄ»°¾ÍÑ¡ÖÐ
+    for (var i = 0; i < sum.length; i++) {  //å¾ªçŽ¯è¾“å‡º
+        if (sum[i].type == "checkbox") {  //åˆ¤æ–­æ˜¯å¦æ˜¯checkbox
+            sum[i].checked = true; //æ˜¯çš„è¯å°±é€‰ä¸­
         }
     }
 }
 
 function unalls() {
     var sum = document.getElementsByName("check");//
-    for (var i = 0; i < sum.length; i++) {  //Ñ­»·Êä³ö
-        if (sum[i].type == "checkbox") {  //ÅÐ¶ÏÊÇ·ñÊÇcheckbox
-            sum[i].checked = false; //ÊÇµÄ»°¾Í²»Ñ¡ÖÐ
+    for (var i = 0; i < sum.length; i++) {  //å¾ªçŽ¯è¾“å‡º
+        if (sum[i].type == "checkbox") {  //åˆ¤æ–­æ˜¯å¦æ˜¯checkbox
+            sum[i].checked = false; //æ˜¯çš„è¯å°±ä¸é€‰ä¸­
         }
     }
 }
 
 function resets() {
     var sum = document.getElementsByName("check");//
-    for (var i = 0; i < sum.length; i++) {  //Ñ­»·Êä³ö
-        if (sum[i].type == "checkbox") {  //ÅÐ¶ÏÊÇ·ñÊÇcheckbox
-            if (sum[i].checked == true) {    //ÅÐ¶ÏÊÇ·ñÑ¡ÖÐ
-                sum[i].checked = false;  //Ñ¡ÖÐµÄÈÃÆä²»Ñ¡Ôñ
+    for (var i = 0; i < sum.length; i++) {  //å¾ªçŽ¯è¾“å‡º
+        if (sum[i].type == "checkbox") {  //åˆ¤æ–­æ˜¯å¦æ˜¯checkbox
+            if (sum[i].checked == true) {    //åˆ¤æ–­æ˜¯å¦é€‰ä¸­
+                sum[i].checked = false;  //é€‰ä¸­çš„è®©å…¶ä¸é€‰æ‹©
             }
-            else {      //ÅÐ¶ÏÊÇ·ñÃ»Ñ¡
-                sum[i].checked = true;   //Ã»Ñ¡ÖÐµÄÈÃÆäÑ¡Ôñ
+            else {      //åˆ¤æ–­æ˜¯å¦æ²¡é€‰
+                sum[i].checked = true;   //æ²¡é€‰ä¸­çš„è®©å…¶é€‰æ‹©
             }
         }
     }
@@ -37,9 +37,30 @@ function showCenter() {
 }
 
 function showBottom() {
-    // alert("aaaaaaa");
     alert(document.getElementById("div_bottom").style.display);
     document.getElementById("div_bottom").style.display = "block";
+}
+function section_showBottom(td_id) {
+    var id = '{"sno":"'+td_id+'"}';
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'section_queryByName.do',
+        contentType: 'application/json;charset=utf-8',
+        //é€šè¿‡idå–è¡¨æ ¼å¯¹è±¡è½¬æ¢æˆjsonæ ¼å¼
+        data:id,
+        success: function (data) {
+            $.each(data, function (index, position) {
+                document.getElementById("sno").value = position.sno;
+                document.getElementById("sname").value = position.sname;
+                $("#sphone").val(position.stype);
+                document.getElementById("sphone").value = position.sphone;
+                document.getElementById("sfax").value = position.sfax;
+                $("#choose_type").val(position.supper);
+                document.getElementById("s_setdate").value = position.s_setdate;
+            })
+        }
+    });
 }
 
 function show(mydiv) {
@@ -53,8 +74,8 @@ function hidden(mydiv) {
 function tm_leave() {
     var type = document.getElementById("result").value;
 
-    if (type == "²»ÓèÂ¼ÓÃ") {
-        if (confirm("ÊÇ·ñ¶Ô¸ÃÔ±¹¤½øÐÐÀëÖ°´¦Àí")) {
+    if (type == "ä¸äºˆå½•ç”¨") {
+        if (confirm("æ˜¯å¦å¯¹è¯¥å‘˜å·¥è¿›è¡Œç¦»èŒå¤„ç†")) {
             document.location.replace("leave.html");
 
             return false;

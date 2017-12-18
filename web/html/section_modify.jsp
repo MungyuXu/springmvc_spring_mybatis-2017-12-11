@@ -19,6 +19,7 @@
     <title>修改部门</title>
     <script>
         function toQuery() {
+            // alert(JSON.stringify($('#search')));
             while ($("#tr_color").length > 0) {
                 $("#tr_color").remove();
             }
@@ -31,17 +32,21 @@
                 success: function (data) {
                     var trc = $("#table_search");
                     var meg = "";
+                    var n = 1;
                     //循环追加表单
                     $.each(data, function (index, position) {
+                        // alert(n);
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
-                        var td3 = '<td>' + position.sno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="javascript:showBottom()">' + position.sname + '</a></td>';
+                        var td3 = '<td id = "select'+ n +'">' + position.sno + '</td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="showBottom(\'select'+n+'\')">' + position.sname + '</a></td>';
                         var td5 = '<td>' + position.stype + '</td>';
                         var td6 = '<td>' + position.s_setdate + '</td>';
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
+                        // alert(meg);
                         trc.append(meg);
+                        n = n+1;
                     })
                 }
             });
@@ -50,7 +55,7 @@
 </head>
 
 <body>
-<span class="span_title">修改部门：</span>
+<span id="1234" class="span_title">修改部门：</span>
 <hr/>
 <span class="span_text">部门查询：</span>
 <form id="search" name="form_search" method="get">
@@ -75,16 +80,17 @@
     <table id="table_search" class="table_list" width="450px" height="100px" border="0" align="center">
         <tr id="tr_title">
             <td width="25">&nbsp;</td>
-            <td width="86">编号</td>
+            <td  id ="111" width="86">编号</td>
             <td width="95">名称</td>
             <td width="56">类型</td>
             <td width="165">成立日期</td>
         </tr>
         <c:forEach items="${sectionList}" var="list">
+
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
-                <td>${list.sno}</td>
-                <td><a href="#div_bottom" onclick="javascript:showBottom()">${list.sname}</a></td>
+                <td id="${list.sno}">${list.sno}</td>
+                <td><a href="#div_bottom" onclick="showBottom(${list.sno})">${list.sname}</a></td>
                 <td>${list.stype}</td>
                 <td>${list.s_setdate}</td>
             </tr>
@@ -99,49 +105,49 @@
         <table align="center" width="430px" border="0px">
             <tr>
                 <td><span class="span_table">编号：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="sno" type="text"/></td>
+                <td><input id="sno" class="input_text" name="sno" type="text"/></td>
                 <td><span class="span_table">名称：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="sname" type="text"/></td>
+                <td><input id="sname" class="input_text" name="sname" type="text"/></td>
             </tr>
             <tr>
                 <td><span class="span_table">类型：</span><font class="mark">*</font></td>
-                <td><select id="choose_type" name="stype">
-                    <option value="Co" selected="selected">公司</option>
-                    <option value="Se">部门</option>
+                <td><select id="choose_type" name="stype" >
+                    <option value="公司" selected="selected">公司</option>
+                    <option value="部门">部门</option>
                 </select></td>
                 <td><span class="span_table">电话：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="" type="text"/></td>
+                <td><input id="sphone" class="input_text" name="" type="text" value=""/></td>
             </tr>
             <tr>
                 <td><span class="span_table">传真：</span></td>
-                <td><input class="input_text" name="sfax" type="text"/></td>
+                <td><input id="sfax" class="input_text" name="sfax" type="text"/></td>
                 <td><span class="span_table">上级部门：</span></td>
                 <td><select id="choose_type">
-                    <option value="Co" selected="selected">公司</option>
-                    <option value="A">A部门</option>
-                    <option value="B">B部门</option>
-                    <option value="C">C部门</option>
+                    <option value="公司" selected="selected">公司</option>
+                    <option value="A部门">A部门</option>
+                    <option value="B部门">B部门</option>
+                    <option value="C部门">C部门</option>
                 </select></td>
             </tr>
             <tr>
                 <td><span class="span_table">成立日期：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="s_setdate" type="text" onClick="javascript:ShowCalendar(this)"></td>
+                <td><input id="s_setdate"  value=""  class="input_text" name="s_setdate" type="text" onClick="ShowCalendar(this)"></td>
                 <td></td>
                 <td></td>
             </tr>
 
             <tr>
                 <td><span class="span_table">描述：</span></td>
-                <td colspan="3"><textarea name="sdes" cols="25" rows="3"></textarea></td>
+                <td colspan="3"><textarea id="sdes"  name="sdes" cols="25" rows="3"></textarea></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><input align="right" class="lbutton" type="submit" value="保存" onclick="return valid_s()"/></td>
+                <td><input align="right" class="lbutton" type="submit" value="保存" onclick="valid_submit_modify()"/></td>
             </tr>
         </table>
     </form>
-</div><!--div for div_bottom-->
+</div>
 </body>
 </html>
