@@ -39,24 +39,33 @@
     <td>性别</td>
     <td>身份证号</td>
   </tr>
-  <tr id="tr_color">
-    <td>1</td>
-     <td><a href="info_modify1.html" >1</a></td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>2</td>
-     <td><a href="info_modify1.html" >1</a></td>
-    <td>2</td>
-    <td>2</td>
-  </tr>
-  <tr id="tr_color">
-    <td>3</td>
-     <td><a href="info_modify1.html" >1</a></td>
-    <td>3</td>
-    <td>3</td>
-  </tr>
+  <c:forEach items="${employList}" var="list">
+    <tr id="tr_color">
+      <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
+      <td>${list.eno}</td>
+      <td><a href="#div_bottom" onclick="showBottom()">${list.ename}</a></td>
+      <td>${list.egender}</td>
+      <td>${list.eid}</td>
+    </tr>
+  </c:forEach>
+  <!--<tr id="tr_color">-->
+    <!--<td>1</td>-->
+     <!--<td><a href="info_modify1.html" >1</a></td>-->
+    <!--<td>1</td>-->
+    <!--<td>1</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>2</td>-->
+     <!--<td><a href="info_modify1.html" >1</a></td>-->
+    <!--<td>2</td>-->
+    <!--<td>2</td>-->
+  <!--</tr>-->
+  <!--<tr id="tr_color">-->
+    <!--<td>3</td>-->
+     <!--<td><a href="info_modify1.html" >1</a></td>-->
+    <!--<td>3</td>-->
+    <!--<td>3</td>-->
+  <!--</tr>-->
 </table>
 </div><!--div for div_center-->
 </body>

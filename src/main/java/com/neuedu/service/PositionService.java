@@ -12,4 +12,5 @@ public interface PositionService {
     public void dele(String[] positions);
     public ArrayList<PositionPojo> query(PositionPojo position);
     public List<PositionPojo> queryByName(PositionPojo section);
+    public  void update(PositionPojo position);
 }

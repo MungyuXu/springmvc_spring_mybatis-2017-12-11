@@ -5,4 +5,25 @@
         insert into employ(eno, ename, egender, ebdate,eid,esection,eposition,etype,efrom,e_entrydate,eattenddate)
          values(#{eno},#{ename},#{egender},#{ebdate},#{eid},#{esection},#{eposition},#{etype},#{efrom},#{e_entrydate},#{eattenddate})
     </insert>
+    <select id="queryAll" resultType="com.neuedu.pojo.EmployPojo">
+        SELECT *  FROM employ
+    </select>
+    <select id="queryByName" parameterType="com.neuedu.pojo.EmployPojo" resultType="com.neuedu.pojo.EmployPojo">
+        SELECT * FROM employ
+        <where>
+            <if test= "eno!= null and eno != ''">
+                AND eno like '%${eno}%'
+            </if>
+            <if test="ename != null and ename != ''">
+                AND ename like '%${ename}%'
+            </if>
+            <if test="esection != null and ptype != ''">
+                AND esection LIKE '%${esection}%'
+            </if>
+        </where>
+    </select>
+    <select id="update" parameterType="com.neuedu.pojo.EmployPojo" resultType="com.neuedu.pojo.EmployPojo">
+        update employ SET
+        ename=#{ename},egender=#{egender},ebdate=#{ebdate},eid=#{eid},esection=#{esection},eposition=#{eposition},etype=#{etype},efrom=#{efrom},e_entrydate=#{e_entrydate},eattenddate=#{eattenddate} where eno=#{eno}
+    </select>
 </mapper>

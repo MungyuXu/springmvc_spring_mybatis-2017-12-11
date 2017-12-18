@@ -37,8 +37,9 @@ function showCenter() {
 }
 
 function showBottom() {
-    alert("!!!!!!!!!!!");
-    document.getElementById("div_bottom").style.display = "none";
+    // alert("aaaaaaa");
+    alert(document.getElementById("div_bottom").style.display);
+    document.getElementById("div_bottom").style.display = "block";
 }
 
 function show(mydiv) {

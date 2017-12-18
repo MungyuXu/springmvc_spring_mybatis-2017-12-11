@@ -13,4 +13,5 @@ public interface PositionMapper {
     public void dele(String[] positionSno);
     public ArrayList<PositionPojo> query(PositionPojo position);
     public List<PositionPojo> queryByName(PositionPojo position);
+    public  void update(PositionPojo position);
 }

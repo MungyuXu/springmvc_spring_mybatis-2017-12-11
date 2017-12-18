@@ -34,4 +34,10 @@
             </if>
         </where>
     </select>
+
+    <select id="update" parameterType="com.neuedu.pojo.PositionPojo" resultType="com.neuedu.pojo.PositionPojo">
+        update position1 SET
+        pname=#{pname},ptype=#{ptype},pnum=#{pnum} where pno=#{pno}
+
+    </select>
 </mapper>
