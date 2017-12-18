@@ -48,16 +48,6 @@
       }
   </script>
 </head>
-
-<tr id="tr_color">
-  <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
-  <td>1</td>
-  <td><a href="#div_bottom" onclick="showBottom()">2稳定</a></td>
-  <td>女</td>
-  <td>2</td>
-</tr>
-
-
 <body>
 <span class="span_title">修改员工信息：</span>
 <hr />
@@ -183,8 +173,7 @@
       </tr>
     </table>
   </form>
-
-
+  </div>
 </body>
 </html>
 

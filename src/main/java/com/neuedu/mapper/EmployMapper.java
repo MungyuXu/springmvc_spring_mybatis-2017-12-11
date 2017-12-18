@@ -4,6 +4,9 @@ import com.neuedu.pojo.EmployPojo;
 
 import java.util.List;
 
+/**
+ * @author hokitlee
+ */
 public interface EmployMapper {
     public void add(EmployPojo employ);
     public List<EmployPojo> queryAll();

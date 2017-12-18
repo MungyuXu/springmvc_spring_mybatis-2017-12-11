@@ -3,7 +3,7 @@ package com.neuedu.pojo;
 /**
  * 描述:
  *
- * @outhor hokitlee
+ * @author hokitlee
  * @create 2017-12-12 14:01
  */
 public class SectionPojo {

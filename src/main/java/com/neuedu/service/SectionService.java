@@ -11,4 +11,5 @@ public interface SectionService {
     public List<SectionPojo> queryAll();
     public void dele(String[] sections);
     public List<SectionPojo> queryByName(SectionPojo section);
+    public void upDateById(SectionPojo sectionPojo);
 }
