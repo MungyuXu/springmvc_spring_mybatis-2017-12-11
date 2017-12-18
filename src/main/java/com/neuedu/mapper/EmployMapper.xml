@@ -17,7 +17,7 @@
             <if test="ename != null and ename != ''">
                 AND ename like '%${ename}%'
             </if>
-            <if test="esection != null and ptype != ''">
+            <if test="esection != null and esection != ''">
                 AND esection LIKE '%${esection}%'
             </if>
         </where>

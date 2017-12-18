@@ -34,8 +34,8 @@ public class EmployController {
     
     
     @RequestMapping(value = "employ_queryByName")
-    public @ResponseBody
-    List<EmployPojo> queryByName(@RequestBody EmployPojo employ){
+    public @ResponseBody List<EmployPojo> queryByName(@RequestBody EmployPojo employ){
+        List<EmployPojo> employList =employService.queryByName(employ);
         return employService.queryByName(employ);
     }
 

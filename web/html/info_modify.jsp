@@ -11,21 +11,25 @@
   <link href="../css/css.css" rel="stylesheet" type="text/css" />
   <script src="../js/calendar.js" type="text/javascript"></script>
   <script src="../js/iframe.js" type="text/javascript"></script>
+  <script src="../js/valid.js" type="text/javascript"></script>
+  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
   <title>修改员工信息</title>
   <script>
       function toQuery() {
-          alert("!");
+
           while ($("#tr_color").length > 0) {
               $("#tr_color").remove();
           }
+          alert("!");
           $.ajax({
               type: 'post',
               url: 'employ_queryByName.do',
               contentType: 'application/json;charset=utf-8',
-              //通过id取表格对象转换成json格式
+              //通过id取表格对象转换成json格式,search是form表单id
               data: JSON.stringify($('#search').serializeObject()),
               success: function (data) {
-                  var trc = $("#table_search");
+                  var trc = $("#info_search");
                   var meg = "";
                   //循环追加表单
                   $.each(data, function (index, position) {
@@ -45,13 +49,22 @@
   </script>
 </head>
 
+<tr id="tr_color">
+  <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
+  <td>1</td>
+  <td><a href="#div_bottom" onclick="showBottom()">2稳定</a></td>
+  <td>女</td>
+  <td>2</td>
+</tr>
+
+
 <body>
 <span class="span_title">修改员工信息：</span>
 <hr />
 <span class="span_text">员工查询：</span><br />
 
 
-<form name="form_search" method="get" >
+<form name="form_search" method="get" id="search">
   <table border="0">
     <tr>
       <td><span class="span_content">部门名称：</span></td>
@@ -71,7 +84,7 @@
 
 <div id="div_center" >
   <span class="span_text">查询结果：</span><br />
-  <table width="450px" class="table_list" border="0">
+  <table id="info_search" width="450px" class="table_list" border="0">
     <tr id="tr_title">
       <td width="25">&nbsp;</td>
       <td>员工号</td>
@@ -115,12 +128,6 @@
           </select>	</td>
         <td>&nbsp;</td>
       </tr>
-      <%--<tr>--%>
-        <%--<td>出生日期：<font class="mark">*</font></td>--%>
-        <%--<td><input  name="edate" type="text"  title="点击选择" onClick="javascript:ShowCalendar(this)">--%>
-        <%--</td>--%>
-        <%--<td>&nbsp;</td>--%>
-      <%--</tr>--%>
       <tr>
         <td>身份证号：<font class="mark">*</font></td>
         <td><input class="input_text" name="eid" type="text" maxlength="18" /></td>
@@ -148,17 +155,6 @@
         </td>
         <td>&nbsp;</td>
       </tr>
-      <%--<tr>--%>
-        <%--<td>入职日期：<font class="mark">*</font></td>--%>
-        <%--<td ><input  name="e_entrydate" type="text"  title="点击选择" onClick="javascript:ShowCalendar(this)">--%>
-        <%--</td>--%>
-        <%--<td>&nbsp;</td>--%>
-      <%--</tr>--%>
-      <%--<tr>--%>
-        <%--<td>参加工作日期：<font class="mark">*</font></td>--%>
-        <%--<td ><input  name="eattenddate" type="text"  title="点击选择" onClick="javascript:ShowCalendar(this)"></td>--%>
-        <%--<td>&nbsp;</td>--%>
-      <%--</tr>--%>
       <tr>
         <td>用工形式：<font class="mark">*</font></td>
         <td>

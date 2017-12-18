@@ -60,7 +60,7 @@
 </div><!--div for div_center-->
 <div id="div_bottom"  style="display:none"  >
 <hr />
-<form id="form_move_submit" method="post" action="employUpdate.do">
+<form id="form_move_submit" method="post" action="pmove.do">
 <span class="span_text">调动信息：</span>
 <table class="table_list" width="450" border="0" align="center">
   <tr>
