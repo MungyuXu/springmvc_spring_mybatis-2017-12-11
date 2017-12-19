@@ -37,7 +37,7 @@ function showCenter() {
 }
 
 function showBottom() {
-    alert(document.getElementById("div_bottom").style.display);
+    // alert(document.getElementById("div_bottom").style.display);
     document.getElementById("div_bottom").style.display = "block";
 }
 

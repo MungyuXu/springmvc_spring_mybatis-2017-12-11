@@ -1,8 +1,10 @@
 package com.neuedu.service.serviceImpl;
 
 import com.neuedu.mapper.EmployMapper;
+import com.neuedu.mapper.PositionMoveMapper;
 import com.neuedu.pojo.EmployPojo;
 
+import com.neuedu.pojo.PositionMovePojo;
 import com.neuedu.service.EmployService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,8 @@ public class EmployServiceImpl implements EmployService {
 
     @Autowired
     EmployMapper employMapper;
-
+@Autowired
+    PositionMoveMapper positionMoveMapper;
     @Override
     public int add(EmployPojo employ) {
         employMapper.add(employ);
@@ -33,10 +36,13 @@ public class EmployServiceImpl implements EmployService {
     @Override
     public  void update(EmployPojo employ){
         employMapper.update(employ);
-
     }
-    @Override
-    public List<EmployPojo> epmove_queryAll() {
-        return employMapper.queryAll();
-    }
+//    @Override
+//    public List<PositionMovePojo> epmove_queryAll() {
+//        return positionMoveMapper.queryAll();
+//    }
+@Override
+public List<EmployPojo> epmove_queryAll() {
+    return employMapper.queryAll();
+}
 }

@@ -14,6 +14,15 @@ public class EmployPojo {
     private  String efrom;
     private  String e_entrydate;
     private  String eattenddate;
+    private int pno;
+
+    public int getPno() {
+        return pno;
+    }
+
+    public void setPno(int pno) {
+        this.pno = pno;
+    }
 
     public int getEno() {
         return eno;

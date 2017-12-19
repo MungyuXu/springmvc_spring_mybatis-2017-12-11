@@ -76,7 +76,7 @@
                 <option>降职</option>
             </select></td>
             <td>&nbsp;</td>
-            <td><input class="button" type="submit" value="查询"/></td>
+            <td><input class="button" type="button" value="查询" onclick="toQuery()"/></td>
         </tr>
     </table>
 </form>
@@ -87,6 +87,7 @@
     <br/>
     <table id="pmove_search" width="450px" class="table_list" border="0">
         <tr id="tr_title">
+            <td width="25">&nbsp;</td>
             <td><span class="span_table">员工号</span></td>
             <td><span class="span_table">姓名</span></td>
             <td><span class="span_table">调动方式</span></td>
@@ -105,39 +106,46 @@
 </div><!--div for div_center-->
 <div id="div_bottom" style="display:none">
     <hr/>
-    <form action="info_modify.jsp " id="form_pmove" method="post">
+    <form action="pmoveUpdate.do" id="form_pmove" method="post">
         <span class="span_text">岗位调动信息：</span>
     <br/>
         <table width="450px" border="0">
             <tr>
                 <td><span class="span_table">员工号：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="q_eno" type="text" /></td>
                 <td><span class="span_table">姓名：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="q_ename" type="text" /></td>
             </tr>
             <tr>
                 <td><span class="span_table">调动原因：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="pmove_cause" type="text" /></td>
                 <td><span class="span_table">调动时间：</span></td>
-                <td>1</td>
+                <td>
+                    <input class="input_text" name="pmove_date" type="text" id="p_date"
+                           onClick="javascript:ShowCalendar(this)">
+                    </td>
             </tr>
             <tr>
                 <td><span class="span_table">原岗位：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="eposition" type="text" /></td>
                 <td><span class="span_table">调动后岗位：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="pmove_position" type="text" /></td>
             </tr>
             <tr>
                 <td><span class="span_table">调转类型：</span></td>
-                <td>1</td>
+                <td><input class="input_text" name="pmove_type" type="text" /></td>
                 <td></td>
                 <td></td>
             </tr>
+            <%--<tr>--%>
+                <%--<td><span class="span_table">备注：</span></td>--%>
+                <%--<td><input class="input_text" name="" type="text" /></td>--%>
+            <%--</tr>--%>
             <tr>
-                <td><span class="span_table">备注：</span></td>
-                <td colspan="3">1</td>
+                <td>&nbsp;</td>
+                <td><input class="lbutton" type="submit" value="修改" /></td>
+                <td></td>
             </tr>
-
         </table>
     </form>
 

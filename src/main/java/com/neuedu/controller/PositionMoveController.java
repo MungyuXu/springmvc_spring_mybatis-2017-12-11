@@ -30,4 +30,15 @@ public class PositionMoveController {
         return positionMoveService.queryByName(positionMove);
     }
 
+    @RequestMapping(value = "pmoveAdd")
+    public  String add(PositionMovePojo positionMove){
+        positionMoveService.add(positionMove);
+        return "redirect:epmove_queryAll.do";
+    }
+    @RequestMapping(value = "pmoveUpdate")
+        public  String update(PositionMovePojo positionMove){
+            positionMoveService.update(positionMove);
+            return "redirect:position_move_queryAll.do";
+        }
+
 }

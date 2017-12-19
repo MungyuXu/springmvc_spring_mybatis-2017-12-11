@@ -8,4 +8,5 @@ public interface PositionMoveMapper {
     public List<PositionMovePojo> queryAll();
     public List<PositionMovePojo> queryByName(PositionMovePojo positionMove);
     public  void update(PositionMovePojo positionMove);
+    public int add(PositionMovePojo positionMove);
 }
