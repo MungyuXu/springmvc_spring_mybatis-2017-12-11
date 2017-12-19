@@ -67,26 +67,29 @@
 <div id="div_bottom" style="display:none" >
     <hr />
     <span class="span_text">调动信息：</span>
-    <form id="form_move_submit" method="post">
+    <form action="section_move_add.do" id="form_move_submit" method="post">
 
         <table class="table_list" width="450" border="0" align="center">
             <tr>
                 <td>员工号：</td>
-                <td id="eno"></td>
+                <td id="eno1"></td>
+                <input id="eno" type="hidden" name="eno" value=""/>
                 <td>姓名：</td>
-                <td id="ename"></td>
+                <td id="name1"></td>
+                <input id="name" type="hidden" name="name" value=""/>
             </tr>
             <tr>
                 <td>部门编号：</td>
                 <td></td>
-                <td>部门：</td>
-                <td id="esection"></td>
+                <td >部门：</td>
+                <td id="oldPosition1"></td>
+                <input id="oldPosition" type="hidden" name="oldPosition" value=""/>
             </tr>
             <tr>
                 <td>调转后部门：<font class="mark">*</font></td>
-                <td><input class="input_text"name="smove_section" type="text"/></td>
+                <td><input class="input_text"name="movePosition" type="text"/></td>
                 <td>调转类型：<font class="mark">*</font></td>
-                <td><select name="smove_type">
+                <td><select name="moveType">
                     <option>主动调转</option>
                     <option>主动调转</option>
                     <option>数据录入错误</option>
@@ -94,14 +97,14 @@
                 <td>&nbsp;</td>
             <tr>
                 <td>调转原因：<font class="mark">*</font></td>
-                <td><input class="input_text" name="smove_cause" type="text" /></td>
+                <td><input class="input_text" name="moveCause" type="text" /></td>
                 <td>调动日期：<font class="mark">*</font></td>
-                <td><input class="input_text" name="smove_date" type="text" onClick="javascript:ShowCalendar(this)" ></td>
+                <td><input class="input_text" name="moveDate" type="text" onClick="javascript:ShowCalendar(this)" ></td>
 
             </tr>
             <tr>
                 <td>备注：</td>
-                <td colspan="3"><textarea name="remark" cols="25" rows="3"></textarea></td>
+                <td colspan="3"><textarea name="" cols="25" rows="3"></textarea></td>
             </tr>
             <tr>
                 <td></td>

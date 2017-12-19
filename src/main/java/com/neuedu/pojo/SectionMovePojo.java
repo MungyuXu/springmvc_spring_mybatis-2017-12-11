@@ -9,6 +9,7 @@ import java.util.Date;
  * @create 2017-12-19 9:25
  */
 public class SectionMovePojo {
+    private int id;
     /*员工号*/
     private int eno;
     /*姓名*/
@@ -25,6 +26,14 @@ public class SectionMovePojo {
     private String moveType;
     /*备注*/
     private String remark;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getEno() {
         return eno;

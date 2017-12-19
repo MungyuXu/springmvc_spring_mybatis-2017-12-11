@@ -66,8 +66,6 @@
 </form>
 <hr/>
 
-<input type="button" value="111" onClick="showBottom()"/>
-
 <div id="div_center">
     <span class="span_text">查询结果：</span>
     <br/>

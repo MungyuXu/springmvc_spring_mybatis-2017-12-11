@@ -100,7 +100,6 @@ function valid_submit_modify() {
 }
 function sectionMove_showBottom(eno) {
     var id = '{"eno":"' + eno + '"}';
-    alert(id);
     document.getElementById("div_bottom").style.display = "";
     $.ajax({
         type: 'post',
@@ -110,9 +109,44 @@ function sectionMove_showBottom(eno) {
         data: id,
         success: function (data) {
             $.each(data, function (index, employ) {
-                document.getElementById("eno").innerText = employ.eno;
-                document.getElementById("ename").innerText = employ.ename;
-                document.getElementById("esection").innerText = employ.esection;
+                document.getElementById("eno1").innerText = employ.eno;
+                document.getElementById("eno").value = employ.eno;
+                document.getElementById("name1").innerText = employ.ename;
+                document.getElementById("name").value = employ.ename;
+                document.getElementById("oldPosition1").innerText = employ.esection;
+                document.getElementById("oldPosition").value = employ.esection;
+            })
+        }
+    });
+}
+function s_move_showBottom(id) {
+    var json = '{"id":"' + id + '"}';
+    document.getElementById("div_bottom").style.display = "";
+    alert(json);
+    $.ajax({
+        type: 'post',
+        url: 'sectionMoveQeryById.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data: json,
+        success: function (data) {
+            $.each(data, function (index, sectionMove) {
+                alert(1);
+                document.getElementById("eno").innerText = sectionMove.eno;
+                document.getElementById("name").innerText = sectionMove.name;
+                document.getElementById("moveCause").innerText = sectionMove.moveCause;
+                document.getElementById("moveDate").innerText = sectionMove.moveDate;
+                document.getElementById("oldPosition").innerText = sectionMove.oldPosition;
+                document.getElementById("movePosition").innerText = sectionMove.movePosition;
+                document.getElementById("moveType").innerText = sectionMove.moveType;
+                document.getElementById("remark").innerText = sectionMove.remark;
+
+                // document.getElementById("eno").value = employ.eno;
+                // document.getElementById("name1").innerText = employ.ename;
+                // document.getElementById("name").value = employ.ename;
+                // document.getElementById("oldPosition1").innerText = employ.esection;
+                // document.getElementById("oldPosition").value = employ.esection;
+                alert(2);
             })
         }
     });
