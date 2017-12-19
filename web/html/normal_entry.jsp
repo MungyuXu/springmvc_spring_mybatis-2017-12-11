@@ -68,9 +68,6 @@
                 <c:forEach items="${positionList}" var="list">
                     <option value="${list.pname}">${list.pname}</option>
                 </c:forEach>
-                <%--<option value="1">岗位1</option>--%>
-                <%--<option value="2">岗位2</option>--%>
-                <%--<option value="3">岗位3</option>--%>
             </select></td>
             <td>&nbsp;</td>
         </tr>

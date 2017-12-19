@@ -2,11 +2,12 @@ package com.neuedu.pojo;
 
 /**
  * 描述:
- *
+ *部门信息实体类
  * @author hokitlee
  * @create 2017-12-12 14:01
  */
 public class SectionPojo {
+    private int id;
     private String sno;
     private String sname;
     private String stype;
@@ -16,6 +17,15 @@ public class SectionPojo {
     private String s_setdate;
     private String submit;
     private  String sdes;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getSno() {
         return sno;
     }

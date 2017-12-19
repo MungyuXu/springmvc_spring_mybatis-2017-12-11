@@ -104,7 +104,7 @@
             </tr>
             <tr>
                 <td>备注：</td>
-                <td colspan="3"><textarea name="" cols="25" rows="3"></textarea></td>
+                <td colspan="3"><textarea name="remark" cols="25" rows="3"></textarea></td>
             </tr>
             <tr>
                 <td></td>
