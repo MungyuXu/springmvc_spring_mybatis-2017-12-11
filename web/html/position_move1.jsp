@@ -37,7 +37,8 @@
                       var td1 = '<tr id="tr_color">';
                       var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                       var td3 = '<td>' + position.eno + '</td>';
-                      var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.ename + '</a></td>';
+                      // var td4 = '<td><a href="#div_bottom" onclick="pmove_showBottom(\'select'+n+'\')">' + position.ename + '</a></td>';
+                      var td4 = '<td><a href="#div_bottom" onclick="pmove_showBottom()">' + position.ename + '</a></td>';
                       var td5 = '<td>' + position.egender + '</td>';
                       var td6 = '<td>' + position.eid + '</td>';
                       var td7 = '</tr>';
@@ -93,11 +94,10 @@
       <tr id="tr_color">
         <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
         <td>${list.eno}</td>
-        <td><a href="#div_bottom" onclick="showBottom()">${list.ename}</a></td>
+        <td><a href="#div_bottom" onclick="pmove_showBottom(${list.eno})">${list.ename}</a></td>
         <td>${list.pno}</td>
         <td>${list.esection}</td>
         <td>${list.eposition}</td>
-
       </tr>
     </c:forEach>
   </table>
@@ -110,12 +110,12 @@
     <table width="450px" border="0" align="center">
       <tr>
         <td width="92">员工号：<font class="mark">*</font></td>
-        <td width="140"><input class="input_text" name="q_eno" type="text" /></td>
+        <td width="140"><input id="eno" class="input_text" name="q_eno" type="text" value="" /></td>
         <td width="204" >&nbsp;</td>
       </tr>
       <tr>
         <td>姓名：<font class="mark">*</font></td>
-        <td><input class="input_text" name="ename" type="text" /></td>
+        <td><input id="ename" class="input_text" name="q_ename" type="text" value=""/></td>
         <td>&nbsp;</td>
       </tr>
       <tr>
@@ -129,7 +129,7 @@
       </tr>
       <tr>
         <td>身份证号：<font class="mark">*</font></td>
-        <td><input class="input_text" name="eid" type="text" maxlength="18" /></td>
+        <td><input id="eid" class="input_text" name="eid" type="text" maxlength="18" value=""/></td>
         <td>&nbsp;</td>
       </tr>
       <tr>

@@ -41,6 +41,29 @@ function showBottom() {
     document.getElementById("div_bottom").style.display = "block";
 }
 
+//岗位修改
+function position_showBottom(td_id) {
+    var id = '{"pno":"' + td_id + '"}';
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'position_queryByName.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data: id,
+        success: function (data) {
+            $.each(data, function (index, position) {
+                document.getElementById("pno").value = position.pno;
+                document.getElementById("pname").value = position.pname;
+                // document.getElementById("ptype").value = position.ptype;
+                document.getElementById("pnum").value = position.pnum;
+
+            })
+        }
+    });
+}
+
+
 function section_showBottom(td_id) {
     var id = '{"sno":"' + td_id + '"}';
     document.getElementById("div_bottom").style.display = "";
@@ -59,6 +82,51 @@ function section_showBottom(td_id) {
                 document.getElementById("sfax").value = position.sfax;
                 $("#choose_type").val(position.supper);
                 document.getElementById("s_setdate").value = position.s_setdate;
+            })
+        }
+    });
+}
+
+//对应员工岗位调动
+function pmove_showBottom(td_id) {
+    var id = '{"eno":"' + td_id + '"}';
+    alert(id);
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'employ_queryByName.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data: id,
+        success: function (data) {
+            $.each(data, function (index, position) {
+                document.getElementById("eno").value = position.eno;
+                document.getElementById("ename").value = position.ename;
+                document.getElementById("eid").value = position.eid;
+            })
+        }
+    });
+}
+//查询已调动岗位员工
+function movep_showBottom(td_id) {
+    var id = '{"q_eno":"' + td_id + '"}';
+    alert(id);
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'position_move_queryByName.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data: id,
+        success: function (data) {
+            $.each(data, function (index, position) {
+                document.getElementById("q_eno").value = position.q_eno;
+                document.getElementById("q_ename").value = position.q_ename;
+                document.getElementById("pmove_cause").value = position.pmove_cause;
+                // document.getElementById("pmove_date").value = position.pmove_date;
+                document.getElementById("eposition").value = position.eposition;
+                document.getElementById("pmove_position").value = position.pmove_position;
+                document.getElementById("pmove_type").value = position.pmove_type;
             })
         }
     });

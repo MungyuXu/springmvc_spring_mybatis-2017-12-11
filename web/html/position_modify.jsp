@@ -30,17 +30,21 @@
                 success: function (data) {
                     var trc = $("#table_search");
                     var meg = "";
+                    var n = 1;
                     //循环追加表单
                     $.each(data, function (index, position) {
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                         var td3 = '<td>' + position.pno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.pname + '</a></td>';
+                        // var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.pname + '</a></td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="position_showBottom(\'select'+n+'\')">' + position.pname + '</a></td>';
                         var td5 = '<td>' + position.ptype + '</td>';
                         var td6 = '<td>' + position.pnum + '</td>';
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
                         trc.append(meg);
+                        n = n+1;
+                        alert(1111);
                     })
                 }
             });
@@ -87,7 +91,7 @@
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
                 <td>${list.pno}</td>
-                <td><a href="#div_bottom" onclick="showBottom()">${list.pname}</a></td>
+                <td><a href="#div_bottom" onclick="position_showBottom(${list.pno})">${list.pname}</a></td>
                 <td>${list.ptype}</td>
                 <td>${list.pnum}</td>
             </tr>
@@ -102,10 +106,10 @@
         <table align="center" width="430px" border="0px">
             <tr>
                 <td><span class="span_table">编号：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="pno" type="text" value="${list.pno}" readonly="readonly" /></td>
+                <td><input id="pno" class="input_text" name="pno" type="text" readonly="readonly" /></td>
                 <%--<td><input class="input_text" name="pno" type="text" value="${list.pno}" readonly="readonly"/></td>--%>
                 <td><span class="span_table" >名称：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="pname" type="text" /></td>
+                <td><input id="pname" class="input_text" name="pname" type="text" /></td>
                 <%--<td><input class="input_text" name="pname" type="text" value="${list.pname}"/></td>--%>
             </tr>
             <tr>
@@ -118,7 +122,7 @@
                     <option value="其他">其他</option>
                 </select></td>
                 <td><span class="span_table">岗位编制：</span></td>
-                <td><input class="input_text" name="pnum" type="text" value="${list.pnum}"/></td>
+                <td><input id="pnum" class="input_text" name="pnum" type="text" value="${list.pnum}"/></td>
             </tr>
 
             <tr>

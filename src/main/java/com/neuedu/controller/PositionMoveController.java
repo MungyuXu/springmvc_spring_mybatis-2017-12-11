@@ -13,32 +13,40 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping(value="html")
+@RequestMapping(value = "html")
 public class PositionMoveController {
+    //自动装配
     @Autowired
     PositionMoveService positionMoveService;
 
+    //查询已调动岗位员工
     @RequestMapping(value = "position_move_queryAll")
-    public  String queryAll(Model model){
+    public String queryAll(Model model) {
         List<PositionMovePojo> positionMoveList;
-        positionMoveList =positionMoveService.queryAll();
-        model.addAttribute("positionMoveList",positionMoveList);
+        positionMoveList = positionMoveService.queryAll();
+        model.addAttribute("positionMoveList", positionMoveList);
         return "html/position_move_search";
     }
+
+    //按xx查询已调动岗位员工
     @RequestMapping(value = "position_move_queryByName")
-    public @ResponseBody List<PositionMovePojo> queryByName(@RequestBody PositionMovePojo positionMove){
+    public @ResponseBody
+    List<PositionMovePojo> queryByName(@RequestBody PositionMovePojo positionMove) {
         return positionMoveService.queryByName(positionMove);
     }
 
+    //调动岗位的加到岗位调动表
     @RequestMapping(value = "pmoveAdd")
-    public  String add(PositionMovePojo positionMove){
+    public String add(PositionMovePojo positionMove) {
         positionMoveService.add(positionMove);
         return "redirect:epmove_queryAll.do";
     }
+
+    //岗位调动表更新
     @RequestMapping(value = "pmoveUpdate")
-        public  String update(PositionMovePojo positionMove){
-            positionMoveService.update(positionMove);
-            return "redirect:position_move_queryAll.do";
-        }
+    public String update(PositionMovePojo positionMove) {
+        positionMoveService.update(positionMove);
+        return "redirect:position_move_queryAll.do";
+    }
 
 }
