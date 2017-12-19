@@ -1,6 +1,7 @@
 package com.neuedu.controller;
 
 import com.neuedu.pojo.EmployPojo;
+import com.neuedu.pojo.PositionMovePojo;
 import com.neuedu.pojo.PositionPojo;
 import com.neuedu.pojo.SectionPojo;
 import com.neuedu.service.EmployService;
@@ -56,14 +57,21 @@ public class EmployController {
         return "redirect:employ_queryAll.do";
     }
 
-    @RequestMapping(value = "epmove_queryAll")
-    public String epmove_queryAll(Model model) {
-        List<EmployPojo> employList;
-        employList = employService.queryAll();
-        model.addAttribute("employList", employList);
-        return "html/position_move";
-    }
-
+//    @RequestMapping(value = "epmove_queryAll")
+//    public String epmove_queryAll(Model model) {
+//        List<PositionMovePojo> positionMoveList;
+//        positionMoveList = employService.epmove_queryAll();
+//        model.addAttribute("positionMoveList", positionMoveList);
+////        return "html/position_move";
+//        return "html/position_move1";
+//    }
+@RequestMapping(value = "epmove_queryAll")
+public String epmove_queryAll(Model model) {
+    List<EmployPojo> employList;
+    employList = employService.queryAll();
+    model.addAttribute("employList", employList);
+    return "html/position_move1";
+}
     @RequestMapping(value = "epmove_normalEentry")
     public String epmove_normalEentry(Model model) {
         List<SectionPojo> sectionList = sectionService.queryAll();

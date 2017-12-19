@@ -102,7 +102,7 @@
         <table align="center" width="430px" border="0px">
             <tr>
                 <td><span class="span_table">编号：</span><font class="mark">*</font></td>
-                <td><input class="input_text" name="pno" type="text"  /></td>
+                <td><input class="input_text" name="pno" type="text" value="${list.pno}" readonly="readonly" /></td>
                 <%--<td><input class="input_text" name="pno" type="text" value="${list.pno}" readonly="readonly"/></td>--%>
                 <td><span class="span_table" >名称：</span><font class="mark">*</font></td>
                 <td><input class="input_text" name="pname" type="text" /></td>

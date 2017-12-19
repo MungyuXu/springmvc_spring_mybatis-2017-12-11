@@ -6,8 +6,8 @@
         SELECT *  FROM pmove
     </select>
         <select id="queryByName" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
-        SELECT * FROM pmove as a ,employ as b
-            <where>  a.q_eno=b.eno
+        SELECT * FROM pmove
+            <where>
             <if test= "q_eno!= null and q_eno != ''">
                 AND q_eno like '%${q_eno}%'
             </if>
@@ -26,9 +26,16 @@
             </where>
     </select>
 
+
     <select id="update" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
-        update position1 SET
-        pname=#{pname},ptype=#{ptype},pnum=#{pnum} where pno=#{pno}
+        update pmove SET
+        q_ename=#{q_ename},pmove_position=#{pmove_position},pmove_type=#{pmove_type},pmove_cause=#{pmove_cause},pmove_date=#{pmove_date},eposition=#{eposition}
+         where q_eno=#{q_eno}
 
     </select>
+
+    <insert id="add" parameterType="com.neuedu.pojo.PositionMovePojo">
+        insert into pmove(q_eno, q_ename, egender, eid,esection,eposition,etype,efrom)
+        values(#{q_eno},#{q_ename},#{egender},#{eid},#{esection},#{eposition},#{etype},#{efrom})
+    </insert>
 </mapper>

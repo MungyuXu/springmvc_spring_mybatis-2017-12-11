@@ -27,8 +27,12 @@
         ename=#{ename},egender=#{egender},ebdate=#{ebdate},eid=#{eid},esection=#{esection},eposition=#{eposition},etype=#{etype},efrom=#{efrom},e_entrydate=#{e_entrydate},eattenddate=#{eattenddate} where eno=#{eno}
     </select>
 
+    <!--<select id="epmove_queryAll" resultType="com.neuedu.pojo.PositionMovePojo">-->
+        <!--SELECT *  FROM employ as a,position1 as b-->
+        <!--WHERE  a.eposition=b.pname-->
+    <!--</select>-->
+
     <select id="epmove_queryAll" resultType="com.neuedu.pojo.EmployPojo">
-        SELECT *  FROM employ as a,smove as b
-        WHERE  a.eno=b.q_eno
+        SELECT *  FROM employ
     </select>
 </mapper>
