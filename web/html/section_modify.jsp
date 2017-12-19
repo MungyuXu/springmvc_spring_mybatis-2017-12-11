@@ -17,9 +17,8 @@
     <title>修改部门</title>
     <script>
         function section_toQuery() {
-            while ($("#tr_color").length > 0) {
-                $("#tr_color").remove();
-            }
+            var trc = $("#tr_title");
+            trc.nextAll().remove();
             $.ajax({
                 type: 'post',
                 url: 'section_queryByName.do',

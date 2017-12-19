@@ -65,7 +65,7 @@ function moveto_ts() {
 
 
 function moveto_smove() {
-    document.getElementById("iframe_main").setAttribute("src", "html/section_move.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/section_move.do");
 }
 
 function moveto_sms() {

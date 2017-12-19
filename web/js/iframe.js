@@ -84,3 +84,36 @@ function tm_leave() {
     }
     return true;
 }
+function valid_submit_modify() {
+    if (valid_s()){
+        $.ajax({
+            type: 'post',
+            url: 'sectionUpDateById.do',
+            contentType: 'application/json;charset=utf-8',
+            //通过id取表格对象转换成json格式
+            data:JSON.stringify($('#form_section').serializeObject()),
+            success: function (data) {
+                alert("修改成功");
+            }
+        });
+    }
+}
+function sectionMove_showBottom(eno) {
+    var id = '{"eno":"' + eno + '"}';
+    alert(id);
+    document.getElementById("div_bottom").style.display = "";
+    $.ajax({
+        type: 'post',
+        url: 'employQeryById.do',
+        contentType: 'application/json;charset=utf-8',
+        //通过id取表格对象转换成json格式
+        data: id,
+        success: function (data) {
+            $.each(data, function (index, employ) {
+                document.getElementById("eno").innerText = employ.eno;
+                document.getElementById("ename").innerText = employ.ename;
+                document.getElementById("esection").innerText = employ.esection;
+            })
+        }
+    });
+}
