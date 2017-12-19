@@ -55,9 +55,9 @@ public class PositionController {
         return "redirect:position_delete.do";
     }
 
-    //requestBody 接受jason格式,ajax后台返回不会跳界面;
-    //responsebody返回
-    //按xx查询
+   /* requestBody 接受jason格式,ajax后台返回不会跳界面;
+    responsebody返回
+    按xx查询*/
     @RequestMapping(value = "position_queryByName")
     public @ResponseBody
     List<PositionPojo> queryByName(@RequestBody PositionPojo position) {

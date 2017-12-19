@@ -36,6 +36,7 @@
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                         var td3 = '<td>' + position.q_eno + '</td>';
+                       /* \'select'+n+'\'*/
                         var td4 = '<td><a href="#div_bottom" onclick="movep_showBottom()">' + position.q_ename + '</a></td>';
                         var td5 = '<td>' + position.q_method + '</td>';
                         var td6 = '<td>' + position.pmove_date + '</td>';
@@ -136,10 +137,6 @@
                 <td></td>
                 <td></td>
             </tr>
-            <%--<tr>--%>
-                <%--<td><span class="span_table">备注：</span></td>--%>
-                <%--<td><input class="input_text" name="" type="text" /></td>--%>
-            <%--</tr>--%>
             <tr>
                 <td>&nbsp;</td>
                 <td><input class="lbutton" type="submit" value="修改" /></td>

@@ -49,7 +49,10 @@ public class EmployServiceImpl implements EmployService {
         employMapper.update(employ);
     }
 
-    /*岗位调动中人员查询*/
+    @Override
+   public List<PositionMovePojo> epmove_queryAll() {
+        return positionMoveMapper.queryAll();
+    }
     @Override
     public List<EmployPojo> epmove_queryAll() {
         return employMapper.queryAll();

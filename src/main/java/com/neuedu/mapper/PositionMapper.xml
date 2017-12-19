@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.mapper.PositionMapper">
-    <!--增加-->
+    <!--增加  id与方法名相同-->
     <insert id="add" parameterType="com.neuedu.pojo.PositionPojo">
         insert into position1(pno, pname, ptype, pnum)
          values(${pno},#{pname},#{ptype},#{pnum})
