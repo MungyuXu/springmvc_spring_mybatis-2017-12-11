@@ -3,7 +3,6 @@ package com.neuedu.service.serviceImpl;
 import com.neuedu.mapper.SectionMoveMapper;
 import com.neuedu.pojo.EmployPojo;
 import com.neuedu.pojo.SectionMovePojo;
-import com.neuedu.service.EmployService;
 import com.neuedu.service.SectionMoveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
