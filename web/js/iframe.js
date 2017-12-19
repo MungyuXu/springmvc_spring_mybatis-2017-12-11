@@ -109,7 +109,7 @@ function pmove_showBottom(td_id) {
 }
 //查询已调动岗位员工
 function movep_showBottom(td_id) {
-    var id = '{"q_eno":"' + td_id + '"}';
+    var id = '{"q_eno":"' + id + '"}';
     alert(id);
     document.getElementById("div_bottom").style.display = "";
     $.ajax({

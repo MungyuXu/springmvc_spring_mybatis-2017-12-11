@@ -32,6 +32,7 @@ public class PositionMoveController {
     @RequestMapping(value = "position_move_queryByName")
     public @ResponseBody
     List<PositionMovePojo> queryByName(@RequestBody PositionMovePojo positionMove) {
+        List<PositionMovePojo> positionMovePojoList=positionMoveService.queryByName(positionMove);
         return positionMoveService.queryByName(positionMove);
     }
 

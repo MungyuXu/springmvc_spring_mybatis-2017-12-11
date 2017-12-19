@@ -10,9 +10,7 @@
             resultType="com.neuedu.pojo.PositionMovePojo">
         SELECT * FROM pmove
         <where>
-            <if test="q_eno!= null and q_eno != ''">
-                AND q_eno like '%${q_eno}%'
-            </if>
+
             <if test="q_ename != null and q_ename != ''">
                 AND q_ename like '%${q_ename}%'
             </if>
