@@ -12,6 +12,8 @@
 <script src="../js/Calendar.js" type="text/javascript"></script>
 <script src="../js/iframe.js" type="text/javascript"></script>
 <script src="../js/valid.js" type="text/javascript"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <title>员工岗位调动</title>
 </head>
 
@@ -68,20 +70,20 @@
 	<td><input class="input_text" name="eno" type="text"  /></td>
 	<td>姓名：</td>
 	<td><input class="input_text" name="ename" type="text"  /></td>
-  </tr>  
+  </tr>
    <tr>
 <td>部门编号：</td>
 <td><input class="input_text" name="sno" type="text"  /></td>
     <td>部门：</td>
 	<td><input class="input_text" name="esection" type="text"  /></td>
-	
-  </tr>  
+
+  </tr>
   <tr>
 <td>岗位：</td>
 <td><input class="input_text" name="eposition" type="text"  /></td>
     <td>调转后岗位：<font class="mark">*</font></td>
     <td><input class="input_text"name="pmove_position" type="text"/></td>
-    
+
   <tr>
 	<td>调转类型：<font class="mark">*</font></td>
    	 <td><select name="pmove_type">
@@ -90,7 +92,7 @@
 	<option>数据录入错误</option>
 	</select></td>
     <td>调转原因：<font class="mark">*</font></td>
-    <td><input class="input_text" name="pmove_cause" type="text" /></td> 
+    <td><input class="input_text" name="pmove_cause" type="text" /></td>
   </tr>
     <%--<tr>--%>
     <%--<td>调动日期：<font class="mark">*</font></td>--%>
@@ -108,8 +110,8 @@
 <td>&nbsp;</td>
 <td><input class="lbutton" type="submit" value="调转" onclick="return valid_move()"/>
 </tr>
- 
-</table>  
+
+</table>
 </form>
 </div>
 </body>

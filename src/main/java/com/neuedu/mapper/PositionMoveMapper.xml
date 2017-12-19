@@ -3,8 +3,7 @@
 <mapper namespace="com.neuedu.mapper.PositionMoveMapper">
 
     <select id="queryAll" resultType="com.neuedu.pojo.PositionMovePojo">
-        SELECT *  FROM pmove as a ,employ as b
-        WHERE  a.q_eno=b.eno
+        SELECT *  FROM pmove
     </select>
         <select id="queryByName" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
         SELECT * FROM pmove as a ,employ as b
