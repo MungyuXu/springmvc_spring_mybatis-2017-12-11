@@ -11,7 +11,7 @@ function moveto_sd() {
 }
 
 function moveto_ss() {
-    document.getElementById("iframe_main").setAttribute("src", "html/section_search.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/section_queryAll.do");
 }
 
 function moveto_ss1() {
@@ -65,11 +65,11 @@ function moveto_ts() {
 
 
 function moveto_smove() {
-    document.getElementById("iframe_main").setAttribute("src", "html/section_move.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/section_move.do");
 }
 
 function moveto_sms() {
-    document.getElementById("iframe_main").setAttribute("src", "html/section_move_search.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/sectionMoveQueryAll.do");
 }
 // function moveto_pmove() {
 //     document.getElementById("iframe_main").setAttribute("src", "html/position_move_queryAll.do");

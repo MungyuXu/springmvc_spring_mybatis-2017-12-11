@@ -56,14 +56,14 @@ public class SectionController {
     }
 
     @RequestMapping(value = "section_queryByName")
-    public @ResponseBody
-    List<SectionPojo> queryByName(@RequestBody SectionPojo section) {
+    public @ResponseBody List<SectionPojo> queryByName(@RequestBody SectionPojo section) {
         List<SectionPojo> sectionPojos = sectionService.queryByName(section);
         return sectionService.queryByName(section);
     }
 
     @RequestMapping(value = "sectionUpDateById")
-    public void sectionUpDateById(@RequestBody SectionPojo sectionPojo) {
+    public String sectionUpDateById(@RequestBody SectionPojo sectionPojo) {
         sectionService.upDateById(sectionPojo);
+        return "ok";
     }
 }

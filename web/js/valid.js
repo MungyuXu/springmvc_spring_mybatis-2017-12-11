@@ -13,22 +13,6 @@ function valid_s() {
     return true;
 }
 
-function valid_submit_modify() {
-    if (valid_s()){
-        $.ajax({
-            type: 'post',
-            url: 'sectionUpDateById.do',
-            contentType: 'application/json;charset=utf-8',
-            //通过id取表格对象转换成json格式
-            data:JSON.stringify($('#form_section').serializeObject()),
-            success: function (data) {
-                alert("1");
-                // section_toQuery();
-            }
-        });
-    }
-}
-
 function valid_p() {
     var f = document.getElementById("form_position");
     var inputs = f.getElementsByTagName("input");

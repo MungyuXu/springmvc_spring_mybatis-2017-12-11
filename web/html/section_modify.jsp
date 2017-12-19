@@ -17,9 +17,8 @@
     <title>修改部门</title>
     <script>
         function section_toQuery() {
-            while ($("#tr_color").length > 0) {
-                $("#tr_color").remove();
-            }
+            var trc = $("#tr_title");
+            trc.nextAll().remove();
             $.ajax({
                 type: 'post',
                 url: 'section_queryByName.do',
@@ -66,8 +65,6 @@
     <input class="button" type="button" value="查询" onclick="section_toQuery()"/>
 </form>
 <hr/>
-
-<input type="button" value="111" onClick="showBottom()"/>
 
 <div id="div_center">
     <span class="span_text">查询结果：</span>
