@@ -52,7 +52,7 @@
 <span class="span_title">修改员工信息：</span>
 <hr/>
 <span class="span_text">员工查询：</span><br/>
-//id=“search”与上对应
+<%--id=“search”与上对应--%>
 <form name="form_search" method="get" id="search">
     <table border="0">
         <tr>
@@ -81,7 +81,7 @@
             <td>性别</td>
             <td>身份证号</td>
         </tr>
-        //循环输出所有查询信息
+        <%--循环输出所有查询信息--%>
         <c:forEach items="${employList}" var="list">
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
