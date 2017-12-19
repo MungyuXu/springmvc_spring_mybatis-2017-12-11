@@ -1,14 +1,11 @@
 package com.neuedu.controller;
 
 import com.neuedu.pojo.EmployPojo;
-import com.neuedu.pojo.PositionMovePojo;
 import com.neuedu.pojo.PositionPojo;
 import com.neuedu.pojo.SectionPojo;
 import com.neuedu.service.EmployService;
-//import com.sun.tools.internal.ws.processor.model.Model;
 import com.neuedu.service.PositionService;
 import com.neuedu.service.SectionService;
-import com.neuedu.service.serviceImpl.SectionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,10 +16,16 @@ import java.util.List;
 
 import org.springframework.ui.Model;
 
+/**
+ * 描述:
+ *人员控制层
+ * @outhor hokitlee
+ * @create 2017-12-19 9:25
+ */
 @Controller
 @RequestMapping(value = "html")
 public class EmployController {
-    //自动装配
+
     @Autowired
     EmployService employService;
     @Autowired
@@ -30,14 +33,14 @@ public class EmployController {
     @Autowired
     PositionService positionService;
 
-    //人员增加
+    /*人员增加*/
     @RequestMapping(value = "employAdd")
     public String add(EmployPojo employ) {
         employService.add(employ);
-        return "ok";
+        return "html/normal_entry";
     }
 
-    //人员查询
+    /*查询所有员工*/
     @RequestMapping(value = "employ_queryAll")
     public String queryAll(Model model) {
         List<EmployPojo> employList;
@@ -46,7 +49,7 @@ public class EmployController {
         return "html/info_modify";
     }
 
-    //按xx查询
+    /*按具体条件模糊查询*/
     @RequestMapping(value = "employ_queryByName")
     public @ResponseBody
     List<EmployPojo> queryByName(@RequestBody EmployPojo employ) {
@@ -54,22 +57,14 @@ public class EmployController {
         return employService.queryByName(employ);
     }
 
-    //修改
+    /*更新人员信息*/
     @RequestMapping(value = "employUpdate")
     public String update(EmployPojo employ) {
         employService.update(employ);
         return "redirect:employ_queryAll.do";
     }
 
-    //    @RequestMapping(value = "epmove_queryAll")
-//    public String epmove_queryAll(Model model) {
-//        List<PositionMovePojo> positionMoveList;
-//        positionMoveList = employService.epmove_queryAll();
-//        model.addAttribute("positionMoveList", positionMoveList);
-////        return "html/position_move";
-//        return "html/position_move1";
-//    }
-    //员工岗位调动查询
+    /*员工岗位调动查询*/
     @RequestMapping(value = "epmove_queryAll")
     public String epmove_queryAll(Model model) {
         List<EmployPojo> employList;
@@ -78,6 +73,7 @@ public class EmployController {
         return "html/position_move1";
     }
 
+    /*查询部门，岗位信息，下拉控件使用*/
     @RequestMapping(value = "epmove_normalEentry")
     public String epmove_normalEentry(Model model) {
         List<SectionPojo> sectionList = sectionService.queryAll();

@@ -1,10 +1,13 @@
 package com.neuedu.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
  * 描述:
- *
+ *人员调转部门实体类
  * @outhor hokitlee
  * @create 2017-12-19 9:25
  */
@@ -59,6 +62,9 @@ public class SectionMovePojo {
         this.moveCause = moveCause;
     }
 
+    /*spring 时间格式化注解*/
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     public Date getMoveDate() {
         return moveDate;
     }

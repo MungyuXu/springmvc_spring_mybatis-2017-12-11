@@ -99,7 +99,7 @@ function ShowCalendar(InputBox)
     var x,y,intLoop,intWeeks,intDays;
     var DivContent;
     var year,month,day;
-    //var o=document.getElementById(InputBox);
+    var o=document.getElementById(InputBox);
     var o=InputBox;
     var oid=o.id;
     var thisyear; //真正的今年年份

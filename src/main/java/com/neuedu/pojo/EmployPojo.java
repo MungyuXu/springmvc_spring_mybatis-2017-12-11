@@ -1,8 +1,14 @@
 package com.neuedu.pojo;
 
 import java.util.Date;
-
+/**
+ * 描述:
+ *人员信息实体类
+ * @outhor hokitlee
+ * @create 2017-12-19 9:25
+ */
 public class EmployPojo {
+    private int id;
     private int eno;
     private String ename;
     private String egender;
@@ -15,6 +21,14 @@ public class EmployPojo {
     private  String e_entrydate;
     private  String eattenddate;
     private int pno;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPno() {
         return pno;

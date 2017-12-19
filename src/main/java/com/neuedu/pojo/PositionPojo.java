@@ -1,10 +1,20 @@
 package com.neuedu.pojo;
 
+
 public class PositionPojo {
+    private int id;
     private int pno;
     private String pname;
     private String ptype;
     private int pnum;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPno() {
         return pno;

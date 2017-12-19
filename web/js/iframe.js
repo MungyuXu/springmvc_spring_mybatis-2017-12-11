@@ -190,7 +190,6 @@ function sectionMove_showBottom(eno) {
 function s_move_showBottom(id) {
     var json = '{"id":"' + id + '"}';
     document.getElementById("div_bottom").style.display = "";
-    alert(json);
     $.ajax({
         type: 'post',
         url: 'sectionMoveQeryById.do',
@@ -199,7 +198,6 @@ function s_move_showBottom(id) {
         data: json,
         success: function (data) {
             $.each(data, function (index, sectionMove) {
-                alert(1);
                 document.getElementById("eno").innerText = sectionMove.eno;
                 document.getElementById("name").innerText = sectionMove.name;
                 document.getElementById("moveCause").innerText = sectionMove.moveCause;
@@ -208,13 +206,6 @@ function s_move_showBottom(id) {
                 document.getElementById("movePosition").innerText = sectionMove.movePosition;
                 document.getElementById("moveType").innerText = sectionMove.moveType;
                 document.getElementById("remark").innerText = sectionMove.remark;
-
-                // document.getElementById("eno").value = employ.eno;
-                // document.getElementById("name1").innerText = employ.ename;
-                // document.getElementById("name").value = employ.ename;
-                // document.getElementById("oldPosition1").innerText = employ.esection;
-                // document.getElementById("oldPosition").value = employ.esection;
-                alert(2);
             })
         }
     });
