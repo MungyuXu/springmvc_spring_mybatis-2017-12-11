@@ -1,7 +1,6 @@
 package com.neuedu.controller;
 
 import com.neuedu.pojo.PositionPojo;
-import com.neuedu.pojo.SectionPojo;
 import com.neuedu.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

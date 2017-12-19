@@ -1,8 +1,13 @@
 package com.neuedu.controller;
 
 import com.neuedu.pojo.EmployPojo;
+import com.neuedu.pojo.PositionPojo;
+import com.neuedu.pojo.SectionPojo;
 import com.neuedu.service.EmployService;
 //import com.sun.tools.internal.ws.processor.model.Model;
+import com.neuedu.service.PositionService;
+import com.neuedu.service.SectionService;
+import com.neuedu.service.serviceImpl.SectionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +21,12 @@ import org.springframework.ui.Model;
 public class EmployController {
     @Autowired
     EmployService employService;
+
+    @Autowired
+    SectionService sectionService;
+
+    @Autowired
+    PositionService positionService;
 
     @RequestMapping(value = "employAdd")
     public  String add(EmployPojo employ){
@@ -51,6 +62,15 @@ public class EmployController {
         employList = employService.queryAll();
         model.addAttribute("employList", employList);
         return "html/position_move";
+    }
+
+    @RequestMapping(value = "epmove_normalEentry")
+    public String epmove_normalEentry(Model model) {
+        List<SectionPojo> sectionList = sectionService.queryAll();
+        model.addAttribute("sectionList", sectionList);
+        List<PositionPojo> positionPojos = positionService.queryAll();
+        model.addAttribute("positionList",positionPojos);
+        return "html/normal_entry";
     }
 }
 
