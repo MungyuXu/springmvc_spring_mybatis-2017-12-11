@@ -47,7 +47,7 @@ function moveto_de() {
 }
 
 function moveto_ne() {
-    document.getElementById("iframe_main").setAttribute("src", "html/normal_entry.html");
+    document.getElementById("iframe_main").setAttribute("src", "html/epmove_normalEentry.do");
 }
 
 
