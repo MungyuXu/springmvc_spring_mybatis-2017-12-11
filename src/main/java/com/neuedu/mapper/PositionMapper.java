@@ -7,6 +7,9 @@ import com.neuedu.pojo.SectionPojo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author hokitlee
+ */
 public interface PositionMapper {
     public void add(PositionPojo position);
     public List<PositionPojo> queryAll();

@@ -18,15 +18,46 @@
     <select id="queryByName" parameterType="com.neuedu.pojo.SectionPojo" resultType="com.neuedu.pojo.SectionPojo">
         SELECT * FROM section
         <where>
-        <if test= "sno!= null and sno != ''">
-            AND sno like '%${sno}%'
-        </if>
-        <if test="sname != null and sname != ''">
-            AND sname like '%${sname}%'
-        </if>
-        <if test="stype != null and stype != ''">
-            AND stype LIKE '%${stype}%'
-        </if>
+            <if test="sno!= null and sno != ''">
+                AND sno like '%${sno}%'
+            </if>
+            <if test="sname != null and sname != ''">
+                AND sname like '%${sname}%'
+            </if>
+            <if test="stype != null and stype != ''">
+                AND stype LIKE '%${stype}%'
+            </if>
         </where>
     </select>
+
+    <update id="upDateById" parameterType="com.neuedu.pojo.SectionPojo">
+        update section
+        <set>
+            <if test="sno != null">
+                sno=#{sno},
+            </if>
+            <if test="sname != null">
+                sname=#{sname},
+            </if>
+            <if test="stype != null">
+                stype=#{stype},
+            </if>
+            <if test="sphone != null">
+                sphone=#{sphone},
+            </if>
+            <if test="sfax != null">
+                sfax=#{sfax},
+            </if>
+            <if test="supper != null">
+                supper=#{supper},
+            </if>
+            <if test="s_setdate != null">
+                s_setdate=#{s_setdate},
+            </if>
+            <if test="sdes != null">
+                sdes=#{sdes}
+            </if>
+        </set>
+        where sno=#{sno}
+    </update>
 </mapper>

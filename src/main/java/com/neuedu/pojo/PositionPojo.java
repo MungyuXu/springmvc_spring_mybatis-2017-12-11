@@ -1,5 +1,8 @@
 package com.neuedu.pojo;
 
+/**
+ * @author hokitlee
+ */
 public class PositionPojo {
     private int pno;
     private String pname;

@@ -13,13 +13,10 @@
     <script src="../js/iframe.js" type="text/javascript"></script>
     <script src="../js/valid.js" type="text/javascript"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
-    <%--<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>--%>
-    <%--<script src="../js/jquery-3.2.1.js" type="text/javascript"></script>--%>
     <script src="https://cdn.bootcss.com/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
     <title>修改部门</title>
     <script>
-        function toQuery() {
-            // alert(JSON.stringify($('#search')));
+        function section_toQuery() {
             while ($("#tr_color").length > 0) {
                 $("#tr_color").remove();
             }
@@ -35,16 +32,14 @@
                     var n = 1;
                     //循环追加表单
                     $.each(data, function (index, position) {
-                        // alert(n);
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                         var td3 = '<td id = "select'+ n +'">' + position.sno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom(\'select'+n+'\')">' + position.sname + '</a></td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="section_showBottom(\'select'+n+'\')">' + position.sname + '</a></td>';
                         var td5 = '<td>' + position.stype + '</td>';
                         var td6 = '<td>' + position.s_setdate + '</td>';
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
-                        // alert(meg);
                         trc.append(meg);
                         n = n+1;
                     })
@@ -68,11 +63,11 @@
         <option value="公司" selected="selected">公司</option>
         <option value="部门">部门</option>
     </select>
-    <input class="button" type="button" value="查询" onclick="toQuery()"/>
+    <input class="button" type="button" value="查询" onclick="section_toQuery()"/>
 </form>
 <hr/>
 
-<input type="button" value="111" onClick="javascript:showBottom()"/>
+<input type="button" value="111" onClick="showBottom()"/>
 
 <div id="div_center">
     <span class="span_text">查询结果：</span>
@@ -90,13 +85,13 @@
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
                 <td id="${list.sno}">${list.sno}</td>
-                <td><a href="#div_bottom" onclick="showBottom(${list.sno})">${list.sname}</a></td>
+                <td><a href="#div_bottom" onclick="section_showBottom(${list.sno})">${list.sname}</a></td>
                 <td>${list.stype}</td>
                 <td>${list.s_setdate}</td>
             </tr>
         </c:forEach>
     </table>
-</div><!--div for div_center-->
+</div>
 <div id="div_bottom" style="display:none">
     <br/>
     <hr/>

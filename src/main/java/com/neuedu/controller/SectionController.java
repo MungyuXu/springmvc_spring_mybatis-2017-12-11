@@ -21,7 +21,7 @@ public class SectionController {
     SectionService sectionService;
 
     //新增部门
-        @RequestMapping(value = "sectionAdd")
+    @RequestMapping(value = "sectionAdd")
     public String add(SectionPojo section) {
         sectionService.add(section);
         return "redirect:section_queryAll.do";
@@ -54,9 +54,16 @@ public class SectionController {
         }
         return "redirect:section_delete.do";
     }
+
     @RequestMapping(value = "section_queryByName")
-    public @ResponseBody List<SectionPojo>  queryByName (@RequestBody SectionPojo section){
-            List<SectionPojo> sectionPojos = sectionService.queryByName(section);
-            return sectionService.queryByName(section);
+    public @ResponseBody
+    List<SectionPojo> queryByName(@RequestBody SectionPojo section) {
+        List<SectionPojo> sectionPojos = sectionService.queryByName(section);
+        return sectionService.queryByName(section);
+    }
+
+    @RequestMapping(value = "sectionUpDateById")
+    public void sectionUpDateById(@RequestBody SectionPojo sectionPojo) {
+        sectionService.upDateById(sectionPojo);
     }
 }

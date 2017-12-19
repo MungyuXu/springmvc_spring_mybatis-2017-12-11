@@ -50,8 +50,6 @@
   </script>
 </head>
 
-
-
 <body>
 <span class="span_title">修改员工信息：</span>
 <hr />
@@ -177,8 +175,7 @@
       </tr>
     </table>
   </form>
-
-
+  </div>
 </body>
 </html>
 

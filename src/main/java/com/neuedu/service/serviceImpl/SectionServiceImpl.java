@@ -35,4 +35,9 @@ public class SectionServiceImpl implements SectionService {
         return sectionMapper.queryByName(section);
     }
 
+    @Override
+    public void upDateById(SectionPojo sectionPojo) {
+        sectionMapper.upDateById(sectionPojo);
+    }
+
 }
