@@ -16,26 +16,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+
 import org.springframework.ui.Model;
+
 @Controller
 @RequestMapping(value = "html")
 public class EmployController {
+    //自动装配
     @Autowired
     EmployService employService;
-
     @Autowired
     SectionService sectionService;
-
     @Autowired
     PositionService positionService;
 
+    //人员增加
     @RequestMapping(value = "employAdd")
-    public  String add(EmployPojo employ){
+    public String add(EmployPojo employ) {
         employService.add(employ);
         return "ok";
     }
 
-    
+    //人员查询
     @RequestMapping(value = "employ_queryAll")
     public String queryAll(Model model) {
         List<EmployPojo> employList;
@@ -43,21 +45,23 @@ public class EmployController {
         model.addAttribute("employList", employList);
         return "html/info_modify";
     }
-    
-    
+
+    //按xx查询
     @RequestMapping(value = "employ_queryByName")
-    public @ResponseBody List<EmployPojo> queryByName(@RequestBody EmployPojo employ){
-        List<EmployPojo> employList =employService.queryByName(employ);
+    public @ResponseBody
+    List<EmployPojo> queryByName(@RequestBody EmployPojo employ) {
+        List<EmployPojo> employList = employService.queryByName(employ);
         return employService.queryByName(employ);
     }
 
-    @RequestMapping (value ="employUpdate")
-    public  String update(EmployPojo employ){
+    //修改
+    @RequestMapping(value = "employUpdate")
+    public String update(EmployPojo employ) {
         employService.update(employ);
         return "redirect:employ_queryAll.do";
     }
 
-//    @RequestMapping(value = "epmove_queryAll")
+    //    @RequestMapping(value = "epmove_queryAll")
 //    public String epmove_queryAll(Model model) {
 //        List<PositionMovePojo> positionMoveList;
 //        positionMoveList = employService.epmove_queryAll();
@@ -65,19 +69,21 @@ public class EmployController {
 ////        return "html/position_move";
 //        return "html/position_move1";
 //    }
-@RequestMapping(value = "epmove_queryAll")
-public String epmove_queryAll(Model model) {
-    List<EmployPojo> employList;
-    employList = employService.queryAll();
-    model.addAttribute("employList", employList);
-    return "html/position_move1";
-}
+    //员工岗位调动查询
+    @RequestMapping(value = "epmove_queryAll")
+    public String epmove_queryAll(Model model) {
+        List<EmployPojo> employList;
+        employList = employService.queryAll();
+        model.addAttribute("employList", employList);
+        return "html/position_move1";
+    }
+
     @RequestMapping(value = "epmove_normalEentry")
     public String epmove_normalEentry(Model model) {
         List<SectionPojo> sectionList = sectionService.queryAll();
         model.addAttribute("sectionList", sectionList);
         List<PositionPojo> positionPojos = positionService.queryAll();
-        model.addAttribute("positionList",positionPojos);
+        model.addAttribute("positionList", positionPojos);
         return "html/normal_entry";
     }
 }

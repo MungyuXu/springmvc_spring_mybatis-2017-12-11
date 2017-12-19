@@ -33,11 +33,10 @@
                     var meg = "";
                     //循环追加表单
                     $.each(data, function (index, position) {
-
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
                         var td3 = '<td>' + position.q_eno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.q_ename + '</a></td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="movep_showBottom()">' + position.q_ename + '</a></td>';
                         var td5 = '<td>' + position.q_method + '</td>';
                         var td6 = '<td>' + position.pmove_date + '</td>';
                         var td7 = '</tr>';
@@ -97,7 +96,7 @@
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
                 <td>${list.q_eno}</td>
-                <td><a href="#div_bottom" onclick="showBottom()">${list.q_ename}</a></td>
+                <td><a href="#div_bottom" onclick="movep_showBottom(${list.q_eno})">${list.q_ename}</a></td>
                 <td>${list.q_method}</td>
                 <td>${list.pmove_date}</td>
             </tr>
@@ -112,13 +111,13 @@
         <table width="450px" border="0">
             <tr>
                 <td><span class="span_table">员工号：</span></td>
-                <td><input class="input_text" name="q_eno" type="text" /></td>
+                <td><input id="q_eno" class="input_text" name="q_eno" type="text" /></td>
                 <td><span class="span_table">姓名：</span></td>
-                <td><input class="input_text" name="q_ename" type="text" /></td>
+                <td><input id="q_ename" class="input_text" name="q_ename" type="text" /></td>
             </tr>
             <tr>
                 <td><span class="span_table">调动原因：</span></td>
-                <td><input class="input_text" name="pmove_cause" type="text" /></td>
+                <td><input id="pmove_cause" class="input_text" name="pmove_cause" type="text" /></td>
                 <td><span class="span_table">调动时间：</span></td>
                 <td>
                     <input class="input_text" name="pmove_date" type="text" id="p_date"
@@ -127,13 +126,13 @@
             </tr>
             <tr>
                 <td><span class="span_table">原岗位：</span></td>
-                <td><input class="input_text" name="eposition" type="text" /></td>
+                <td><input id="eposition" class="input_text" name="eposition" type="text" /></td>
                 <td><span class="span_table">调动后岗位：</span></td>
-                <td><input class="input_text" name="pmove_position" type="text" /></td>
+                <td><input id="pmove_position" class="input_text" name="pmove_position" type="text" /></td>
             </tr>
             <tr>
                 <td><span class="span_table">调转类型：</span></td>
-                <td><input class="input_text" name="pmove_type" type="text" /></td>
+                <td><input id="pmove_type" class="input_text" name="pmove_type" type="text" /></td>
                 <td></td>
                 <td></td>
             </tr>

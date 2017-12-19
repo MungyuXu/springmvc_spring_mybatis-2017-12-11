@@ -13,36 +13,44 @@ import java.util.List;
 
 @Service
 public class EmployServiceImpl implements EmployService {
-
+    //自动装配
     @Autowired
     EmployMapper employMapper;
-@Autowired
+    @Autowired
     PositionMoveMapper positionMoveMapper;
+
+    //增加人员
     @Override
     public int add(EmployPojo employ) {
         employMapper.add(employ);
         return 0;
     }
 
+    //查询人员
     @Override
     public List<EmployPojo> queryAll() {
         return employMapper.queryAll();
     }
 
+    //按需查询
     @Override
     public List<EmployPojo> queryByName(EmployPojo employ) {
         return employMapper.queryByName(employ);
     }
+
+    //修改
     @Override
-    public  void update(EmployPojo employ){
+    public void update(EmployPojo employ) {
         employMapper.update(employ);
     }
-//    @Override
+
+    //    @Override
 //    public List<PositionMovePojo> epmove_queryAll() {
 //        return positionMoveMapper.queryAll();
 //    }
-@Override
-public List<EmployPojo> epmove_queryAll() {
-    return employMapper.queryAll();
-}
+    //岗位调动中人员查询
+    @Override
+    public List<EmployPojo> epmove_queryAll() {
+        return employMapper.queryAll();
+    }
 }

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.mapper.EmployMapper">
+    <!--增加员工-->
     <insert id="add" parameterType="com.neuedu.pojo.EmployPojo">
         insert into employ(eno, ename, egender, ebdate,eid,esection,eposition,etype,efrom,e_entrydate,eattenddate)
          values(#{eno},#{ename},#{egender},#{ebdate},#{eid},#{esection},#{eposition},#{etype},#{efrom},#{e_entrydate},#{eattenddate})
     </insert>
+    <!--查找员工-->
     <select id="queryAll" resultType="com.neuedu.pojo.EmployPojo">
         SELECT *  FROM employ
     </select>
+    <!--按要素查找员工-->
     <select id="queryByName" parameterType="com.neuedu.pojo.EmployPojo" resultType="com.neuedu.pojo.EmployPojo">
         SELECT * FROM employ
         <where>
@@ -22,6 +25,7 @@
             </if>
         </where>
     </select>
+    <!--修改员工信息-->
     <select id="update" parameterType="com.neuedu.pojo.EmployPojo" resultType="com.neuedu.pojo.EmployPojo">
         update employ SET
         ename=#{ename},egender=#{egender},ebdate=#{ebdate},eid=#{eid},esection=#{esection},eposition=#{eposition},etype=#{etype},efrom=#{efrom},e_entrydate=#{e_entrydate},eattenddate=#{eattenddate} where eno=#{eno}
@@ -31,7 +35,7 @@
         <!--SELECT *  FROM employ as a,position1 as b-->
         <!--WHERE  a.eposition=b.pname-->
     <!--</select>-->
-
+<!--查询员工（岗位调动模块）-->
     <select id="epmove_queryAll" resultType="com.neuedu.pojo.EmployPojo">
         SELECT *  FROM employ
     </select>

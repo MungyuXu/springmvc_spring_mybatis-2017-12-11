@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.mapper.PositionMoveMapper">
-
+    <!--查询所有-->
     <select id="queryAll" resultType="com.neuedu.pojo.PositionMovePojo">
         SELECT *  FROM pmove
     </select>
-        <select id="queryByName" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
+    <!--按要素查询岗位调动表-->
+    <select id="queryByName" parameterType="com.neuedu.pojo.PositionMovePojo"
+            resultType="com.neuedu.pojo.PositionMovePojo">
         SELECT * FROM pmove
-            <where>
-            <if test= "q_eno!= null and q_eno != ''">
+        <where>
+            <if test="q_eno!= null and q_eno != ''">
                 AND q_eno like '%${q_eno}%'
             </if>
             <if test="q_ename != null and q_ename != ''">
@@ -23,17 +25,17 @@
             <if test="end != null and end != ''">
                 AND "end" LIKE '%${end}%'
             </if>
-            </where>
+        </where>
     </select>
 
-
+    <!--修改-->
     <select id="update" parameterType="com.neuedu.pojo.PositionMovePojo" resultType="com.neuedu.pojo.PositionMovePojo">
         update pmove SET
         q_ename=#{q_ename},pmove_position=#{pmove_position},pmove_type=#{pmove_type},pmove_cause=#{pmove_cause},pmove_date=#{pmove_date},eposition=#{eposition}
          where q_eno=#{q_eno}
 
     </select>
-
+    <!--插入到调动岗位表-->
     <insert id="add" parameterType="com.neuedu.pojo.PositionMovePojo">
         insert into pmove(q_eno, q_ename, egender, eid,esection,eposition,etype,efrom)
         values(#{q_eno},#{q_ename},#{egender},#{eid},#{esection},#{eposition},#{etype},#{efrom})
