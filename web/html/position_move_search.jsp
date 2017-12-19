@@ -36,10 +36,10 @@
 
                         var td1 = '<tr id="tr_color">';
                         var td2 = '<td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>';
-                        var td3 = '<td>' + position.eno + '</td>';
-                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.ename + '</a></td>';
-                        var td5 = '<td>' + position.egender + '</td>';
-                        var td6 = '<td>' + position.eid + '</td>';
+                        var td3 = '<td>' + position.q_eno + '</td>';
+                        var td4 = '<td><a href="#div_bottom" onclick="showBottom()">' + position.q_ename + '</a></td>';
+                        var td5 = '<td>' + position.q_method + '</td>';
+                        var td6 = '<td>' + position.pmove_date + '</td>';
                         var td7 = '</tr>';
                         meg = td1 + td2 + td3 + td4 + td5 + td6 + td7;
                         trc.append(meg);
@@ -95,10 +95,10 @@
         <c:forEach items="${positionMoveList}" var="list">
             <tr id="tr_color">
                 <td><input name="check" type="checkbox" value="cheak" disabled="disabled"/></td>
-                <td>${list.eno}</td>
-                <td><a href="#div_bottom" onclick="showBottom()">${list.ename}</a></td>
-                <td>${list.egender}</td>
-                <td>${list.eid}</td>
+                <td>${list.q_eno}</td>
+                <td><a href="#div_bottom" onclick="showBottom()">${list.q_ename}</a></td>
+                <td>${list.q_method}</td>
+                <td>${list.pmove_date}</td>
             </tr>
         </c:forEach>
     </table>
